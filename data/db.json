@@ -1,0 +1,80 @@
+{
+  "student": {
+    "THname":"นางสาวพัทธ์ธีรา ทะนงศักดิ์ศรีกุล (แอนฟิลด์)",
+    "name": "Pattrira Tanongsaksrikun",
+    "nickName": "Anfield",
+    "major": "Computer Science",
+    "University": "Kasetsart University Sriracha Campus"
+  },
+  "achievements": [
+    {
+      "title" : "MathLab Certificate",
+      "issuer" : "MathLab Academy",
+      "date" : "2024-03-04",
+      "tags": ["MathLab"],
+      "image": "Mathlab_cer.jpg",
+      "description": "Fundamentals of MATLAB scripting, matrices, and visualization.",
+      "verified": true
+    },
+    {
+      "title": "LINK Certified NETWORK CABLING for Engineering",
+      "issuer": "LINK",
+      "date": "2025-09-17",
+      "tags": ["Network", "Engineering"],
+      "image": "LINK_cer.jpeg",
+      "description": "Practical skills in network cabling standards, connectors, and testing.",
+      "verified": true
+    },
+
+    {
+      "title": "Smart Chatbot with Google Sheets",
+      "issuer": "Digital Academy Thailand",
+      "date": "2024-07-18",
+      "tags": ["Chatbot", "Automation"],
+      "image": "Chatbot_cer.jpg",
+      "description": "Building a chatbot integrated with Google Sheets via automation tools.",
+      "verified": false
+    },
+
+    {
+      "title": "Basic Cybersecurity",
+      "issuer": "NCSA Thailand (MOOC)",
+      "date": "2025-11-15",
+      "tags": ["Cybersecurity"],
+      "image": "NCSA_cer.jpg",
+      "description": "Introduction to cybersecurity concepts, common threats, and prevention.",
+      "verified": false
+    },
+
+    {
+      "title": "Cybersecurity Training Program",
+      "issuer": "Digital Academy Thailand",
+      "date": "2024-11-17",
+      "tags": ["Cybersecurity"],
+      "image": "Cybersecurity_cer.jpg",
+      "description": "Hands-on cybersecurity training and simulated attack-defense scenarios.",
+      "verified": true
+    },
+
+    {
+      "title": "FutureDev: Web Application Development with Next.js",
+      "issuer": "FutureDev Thailand",
+      "date": "2025-11-12",
+      "tags": ["Frontend"],
+      "image": "Next_JS_cer.jpg",
+      "description": "Developing modern web applications using Next.js and full-stack concepts.",
+      "verified": true
+    },
+
+    {
+      "title": "Front-end Web Development using React",
+      "issuer": "Digital Academy Thailand",
+      "date": "2025-04-21",
+      "tags": ["Frontend"],
+      "image": "React_cer.jpg",
+      "description": "Front-end development with React, components, hooks, and UI design.",
+      "verified": true
+    }
+  ]
+  
+}
