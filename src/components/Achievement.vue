@@ -159,7 +159,7 @@ export default {
     async fetchAchievements() {
       try {
         // เปลี่ยน path ให้ตรงกับที่เก็บไฟล์ db.json ของคุณ
-        const response = await fetch('./data/db.json');
+        const response = await fetch('./db.json');
         const data = await response.json();
         
         // ดึงข้อมูล achievements จาก JSON
