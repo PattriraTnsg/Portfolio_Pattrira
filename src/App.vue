@@ -50,7 +50,7 @@
                   <span class="nav-underline"></span>
                 </a>
               </li>
-              <!-- <li class="nav-item">
+              <li class="nav-item">
                 <a
                   class="nav-link"
                   :class="{ active: activeSection === 'Skills' }"
@@ -59,7 +59,7 @@
                   <span class="nav-text">Skills</span>
                   <span class="nav-underline"></span>
                 </a>
-              </li> -->
+              </li>
               <li class="nav-item">
                 <a
                   class="nav-link contact-btn"
@@ -87,9 +87,9 @@
       <Achievement />
     </section>
 
-    <!-- <section id="Education" ref="Education">
-      <Education />
-    </section> -->
+    <section id="Skills" ref="Skills">
+      <Skills />
+    </section>
 
     <section id="Contact" ref="Contact">
       <Contact />
@@ -99,7 +99,7 @@
 
 <script>
 import About from "./components/About.vue";
-import Education from "./components/Education.vue";
+import Skills from "./components/Skills.vue";
 import Contact from "./components/Contact.vue";
 import Home from "./components/Home.vue";
 import Achievement from "./components/Achievement.vue";
@@ -109,7 +109,7 @@ export default {
   components: {
     Home,
     About,
-    Education,
+    Skills,
     Achievement,
     Contact,
   },

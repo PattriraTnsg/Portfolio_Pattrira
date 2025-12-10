@@ -7,7 +7,10 @@
         <img :src="contact_pic" alt="me" class="contact_img" />
         <div class="contact-info">
           <h4>
-            Email : pattrira.tnsg@gmail.com <br />
+            Email : pattrira.tnsg@gmail.com
+            <button class="copy-btn" @click="copyText('pattrira.tnsg@gmail.com')">⧉</button>
+            <br />
+
             Tel. : 097-110-9214 <br>
             <!-- Social Links -->
             <div class="social-links">
@@ -29,7 +32,7 @@
               <a href="https://www.instagram.com/pt_11.3_npc?igsh=ZHR1cm9pdjMxMTN2" class="social-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                   <path
-                    d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3h10zm-5 3c-2.757 0-5 2.243-5 5s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5zm0 2c1.654 0 3 1.346 3 3s-1.346 3-3 3-3-1.346-3-3 1.346-3 3-3zm4.5-3a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"/>
+                    d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3h10zm-5 3c-2.757 0-5 2.243-5 5s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5zm0 2c1.654 0 3 1.346 3 3s-1.346 3-3 3-3-1.346-3-3 1.346-3 3-3zm4.5-3a1.5 1.5 0 110 3 1.5 1.5 0 010-3z" />
                 </svg>
               </a>
             </div>
@@ -48,7 +51,13 @@ export default {
     return {
       contact_pic
     }
-  }
+  },
+  methods:  {
+    copyText(text) {
+      navigator.clipboard.writeText(text);
+      alert("Copied: " + text);
+    },
+  },
 };
 </script>
 
@@ -79,8 +88,8 @@ export default {
   padding: 3rem;
   border-radius: 20px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  max-width: 600px;
-  width: 100%;
+  max-width: 700px;
+  width: 150%;
   text-align: center;
   transition: transform 0.3s ease-in-out;
 }
@@ -88,6 +97,24 @@ export default {
 .contact-card:hover {
   transform: scale(1.05);
 }
+
+.copy-btn {
+  margin-left: 5px;
+  border: none;
+  background: #eaeaea;
+  padding: 0.5px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.copy-btn:hover {
+  background: #444;
+  color: #eaeaea;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3)
+}
+
 
 .contact-info {
   text-align: left;
