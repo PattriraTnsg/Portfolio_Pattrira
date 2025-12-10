@@ -168,7 +168,7 @@ export default {
   left: -2px;
   right: -2px;
   bottom: -2px;
-  background: linear-gradient(135deg, rgb(244, 202, 95), rgb(247, 202, 88));
+  background: rgb(242, 204, 123);
   border-radius: 1.5rem;
   opacity: 0;
   transition: opacity 0.4s ease;

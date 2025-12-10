@@ -152,7 +152,7 @@ export default {
 <style scoped>
 /* Home Section */
 .home-section {
-  background: linear-gradient(135deg, #f2cc7b 0%, #f4d494 50%, #f8e0ad 100%);
+  background: rgb(242, 204, 123);
   height: 100vh;
   display: flex;
   align-items: center;
