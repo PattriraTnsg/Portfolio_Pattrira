@@ -83,7 +83,7 @@ export default {
 
 <style>
 .About-section {
-  background: linear-gradient(135deg, #3a3938 0%, #464544 50%, #525150 100%);
+  background: #333;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -148,11 +148,11 @@ export default {
 .student-card {
   flex: 1;
   max-width: 520px;
-  background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
+  background: #333;
   border-radius: 1.5rem;
   padding: 2rem;
   margin-top: 4rem;
-  margin-left: 20rem;
+  margin-left: 10rem;
   box-shadow: 
     0 20px 60px rgba(0, 0, 0, 0.3),
     0 0 0 1px rgba(255, 255, 255, 0.1);
@@ -179,6 +179,11 @@ export default {
   transform: translateY(-5px);
 }
 
+.student-card:hover .title {
+  color: #333;
+}
+
+
 .student-card:hover::before {
   opacity: 1;
 }
@@ -198,8 +203,9 @@ export default {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 2rem;
-  color: #333;
+  color: rgb(242, 204, 123);
   letter-spacing: 2px;
+  transition: color 0.4s ease;
 }
 
 .profile_img {
@@ -237,7 +243,6 @@ export default {
   border-radius: 1.5rem;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(252, 202, 75, 0.2);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   margin-right: 5rem;
   box-shadow: 0 5px 10px rgba(252, 202, 75);
 }

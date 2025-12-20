@@ -1,6 +1,6 @@
 {
   "student": {
-    "THname":"นางสาวพัทธ์ธีรา ทะนงศักดิ์ศรีกุล (แอนฟิลด์)",
+    "THname": "นางสาวพัทธ์ธีรา ทะนงศักดิ์ศรีกุล (แอนฟิลด์)",
     "name": "Pattrira Tanongsaksrikun",
     "nickName": "Anfield",
     "major": "Computer Science",
@@ -8,9 +8,9 @@
   },
   "achievements": [
     {
-      "title" : "MathLab Certificate",
-      "issuer" : "MathLab Academy",
-      "date" : "2024-03-04",
+      "title": "MathLab Certificate",
+      "issuer": "MathLab Academy",
+      "date": "2024-03-04",
       "tags": ["MathLab"],
       "image": "Mathlab_cer.jpg",
       "description": "Fundamentals of MATLAB scripting, matrices, and visualization.",
@@ -75,6 +75,160 @@
       "description": "Front-end development with React, components, hooks, and UI design.",
       "verified": true
     }
-  ]
-  
+  ],
+   "skills": {
+    "tech": [
+      {
+      "key": "programming",
+      "title": "Programming",
+      "description": "Languages and core computer science fundamentals",
+      "skills": [
+        {
+          "id": 1,
+          "name": "Java",
+          "percentage": 75,
+          "icon": "/icons/java.svg"
+        },
+        {
+          "id": 2,
+          "name": "Python",
+          "percentage": 80,
+          "icon": "/icons/python.svg"
+        },
+        {
+          "id": 3,
+          "name": "C",
+          "percentage": 65,
+          "icon": "/icons/c.svg"
+        },
+        {
+          "id": 4,
+          "name": "C++",
+          "percentage": 70,
+          "icon": "/icons/cpp.svg"
+        }
+      ]
+    },
+
+    {
+      "key": "web",
+      "title": "Web Development",
+      "description": "Frontend and modern web application development",
+      "skills": [
+        {
+          "id": 5,
+          "name": "HTML5",
+          "percentage": 85,
+          "icon": "/icons/html.svg"
+        },
+        {
+          "id": 6,
+          "name": "CSS",
+          "percentage": 85,
+          "icon": "/icons/css.svg"
+        },
+        {
+          "id": 7,
+          "name": "JavaScript",
+          "percentage": 75,
+          "icon": "/icons/javascript.svg"
+        },
+        {
+          "id": 8,
+          "name": "Vue.js",
+          "percentage": 75,
+          "icon": "/icons/vue.svg"
+        },
+        {
+          "id": 9,
+          "name": "Next.js",
+          "percentage": 65,
+          "icon": "/icons/nextjs.svg"
+        },
+        {
+          "id": 10,
+          "name": "RESTful API",
+          "percentage": 70,
+          "icon": "/icons/api.svg"
+        }
+      ]
+    },
+
+    {
+      "key": "ai-ml",
+      "title": "AI & Machine Learning",
+      "description": "Basic data processing and machine learning foundations",
+      "skills": [
+        {
+          "id": 11,
+          "name": "Python (Data / ML)",
+          "percentage": 65,
+          "icon": "/icons/python.svg"
+        }
+      ]
+    },
+
+    {
+      "key": "tools",
+      "title": "Tools & Technologies",
+      "description": "Tools and technologies used in real-world development",
+      "skills": [
+        {
+          "id": 13,
+          "name": "GitHub",
+          "percentage": 75,
+          "icon": "/icons/github.svg"
+        },
+        {
+          "id": 14,
+          "name": "VS Code",
+          "percentage": 85,
+          "icon": "/icons/vscode.svg"
+        },
+        {
+          "id": 15,
+          "name": "Postman",
+          "percentage": 70,
+          "icon": "/icons/postman.svg"
+        },
+        {
+          "id": 16,
+          "name": "MySQL / PostgreSQL",
+          "percentage": 70,
+          "icon": "/icons/sql.svg"
+        },
+        {
+          "id": 17,
+          "name": "Figma",
+          "percentage": 75,
+          "icon": "/icons/figma.svg"
+        }
+      ]
+    }
+  ],
+
+  "soft": [
+    {
+      "id": 101,
+      "name": "Teamwork",
+      "icon": "/icons/team.svg"
+    },
+    {
+      "id": 102,
+      "name": "Problem Solving",
+      "icon": "/icons/problem-solving.svg"
+    },
+    {
+      "id": 103,
+      "name": "Responsibility",
+      "icon": "/icons/responsibility.svg"
+    },
+    {
+      "id": 104,
+      "name": "Adaptability",
+      "icon": "/icons/adaptability.svg"
+    }
+    ]
+  }
 }
+
