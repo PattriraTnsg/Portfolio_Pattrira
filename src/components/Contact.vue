@@ -63,7 +63,13 @@ export default {
 
 <style scoped>
 .contact-section {
-  background-color: #333;
+  background: linear-gradient(
+    135deg,
+    rgb(242, 204, 123) 0%,      /* เหลือง */
+    rgb(242, 204, 123) 50%,
+    #333 50%,                  /* เทา */
+    #333 100%
+  );
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -76,7 +82,7 @@ export default {
 .title {
   font-size: 3rem;
   margin-bottom: 1.5rem;
-  color: rgb(242, 204, 123);
+  color: #333;
   text-align: center;
 }
 

@@ -74,6 +74,25 @@
       "image": "React_cer.jpg",
       "description": "Front-end development with React, components, hooks, and UI design.",
       "verified": true
+    },
+
+    {
+      "title": "Academic Excellence Award (Outstanding Academic Performance)",
+      "issuer": "Kasetsart University",
+      "date": "2024-04-08",
+      "tags": ["KUSRC"],
+      "image": "cer_66.jpg",
+      "description": "Awarded by Kasetsart University for outstanding academic performance in the 2024 academic year, recognizing students who achieved a GPA of 3.50 or higher and met all undergraduate academic requirements.",
+      "verified": true
+    },
+    {
+      "title": "Academic Excellence Award (Outstanding Academic Performance)",
+      "issuer": "Kasetsart University",
+      "date": "2025-07-25",
+      "tags": ["KUSRC"],
+      "image": "cer_67.jpg",
+      "description": "Awarded by Kasetsart University for outstanding academic performance in the 2025 academic year, recognizing students who achieved a GPA of 3.50 or higher and met all undergraduate academic requirements.",
+      "verified": true
     }
   ],
    "skills": {
