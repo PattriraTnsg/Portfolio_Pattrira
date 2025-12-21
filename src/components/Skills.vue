@@ -36,11 +36,20 @@
         </div>
       </div>
 
+      <!-- category nav -->
+      <div v-if="activeSection === 'tech'" class="category-nav">
+        <button v-for="(category, index) in techCategories" :key="category.key"
+          :class="{ active: currentPage === index + 1 }" @click="currentPage = index + 1">
+          {{ category.title }}
+        </button>
+      </div>
+
+
       <!-- skills wrapper with arrows -->
       <div class="skills-wrapper">
 
         <!-- previous -->
-        <button class="nav-btn left" @click="prevPage" :disabled="currentPage === 1" aria-label="Previous page">
+        <button v-if="!showCategoryNav" class="nav-btn left" @click="prevPage" :disabled="currentPage === 1" aria-label="Previous page">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
               stroke-linejoin="round" />
@@ -97,7 +106,7 @@
         </transition-group>
 
         <!-- next arrow -->
-        <button class="nav-btn right" @click="nextPage" :disabled="currentPage === totalPages" aria-label="Next page">
+        <button  v-if="!showCategoryNav" class="nav-btn right" @click="nextPage" :disabled="currentPage === totalPages" aria-label="Next page">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
               stroke-linejoin="round" />
@@ -152,6 +161,10 @@ const paginatedCategories = computed(() => {
   return activeCategories.value.slice(start, start + itemsPerPage)
 })
 
+const showCategoryNav = computed(() =>
+  activeSection.value === 'tech'
+)
+
 /* helper functions */
 const getLevel = (percentage) => {
   if (percentage >= 90) return 'Expert'
@@ -180,6 +193,17 @@ const prevPage = () => {
   }
 }
 
+const setDefaultCategory = (key) => {
+  const index = techCategories.value.findIndex(
+    (category) => category.key === key
+  )
+
+  if (index !== -1) {
+    currentPage.value = index + 1
+  }
+}
+
+
 /* reset page when switch section */
 watch(activeSection, () => {
   currentPage.value = 1
@@ -192,6 +216,7 @@ onMounted(async () => {
 
     techCategories.value = data.skills.tech
     softSkills.value = data.skills.soft
+    setDefaultCategory('web')
   } catch (error) {
     console.error('Error loading skills:', error)
   }
@@ -224,6 +249,37 @@ onMounted(async () => {
     transform: translateY(-30px) rotate(180deg);
   }
 }
+
+.category-nav {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.category-nav button {
+  padding: 10px 18px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: transparent;
+  color: #b8b8d0;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.category-nav button:hover {
+  color: #fff;
+  border-color: rgba(242, 204, 123, 0.6);
+}
+
+.category-nav button.active {
+  background: linear-gradient(135deg, rgb(242, 204, 123), rgb(255, 199, 56));
+  color: #1a1a2e;
+  border-color: transparent;
+  box-shadow: 0 4px 12px rgba(242, 204, 123, 0.35);
+}
+
 
 .skills-content {
   position: relative;
@@ -615,17 +671,35 @@ onMounted(async () => {
 /* Transitions */
 .fade-slide-enter-active,
 .fade-slide-leave-active {
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    transform 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s ease;
+  will-change: transform, opacity;
 }
 
 .fade-slide-enter-from {
   opacity: 0;
-  transform: translateX(30px);
+  transform: translateX(40px);
+}
+
+.fade-slide-enter-to {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-slide-leave-from {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .fade-slide-leave-to {
   opacity: 0;
-  transform: translateX(-30px);
+  transform: translateX(-40px);
+}
+
+/* IMPORTANT: prevent layout jump */
+.fade-slide-leave-active {
+  position: absolute;
 }
 
 /* Pagination Dots */
