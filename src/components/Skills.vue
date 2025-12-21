@@ -49,7 +49,7 @@
       <div class="skills-wrapper">
 
         <!-- previous -->
-        <button v-if="!showCategoryNav" class="nav-btn left" @click="prevPage" :disabled="currentPage === 1" aria-label="Previous page">
+        <button v-if="!showCategoryNav && totalPages > 1" class="nav-btn left" @click="prevPage" :disabled="currentPage === 1" aria-label="Previous page">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
               stroke-linejoin="round" />
@@ -106,7 +106,7 @@
         </transition-group>
 
         <!-- next arrow -->
-        <button  v-if="!showCategoryNav" class="nav-btn right" @click="nextPage" :disabled="currentPage === totalPages" aria-label="Next page">
+        <button  v-if="!showCategoryNav && totalPages > 1" class="nav-btn right" @click="nextPage" :disabled="currentPage === totalPages" aria-label="Next page">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
               stroke-linejoin="round" />
@@ -633,14 +633,15 @@ onMounted(async () => {
 /* Soft Skills Grid */
 .soft-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  margin-top: 20px;
 }
 
 .soft-card {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
   border-radius: 16px;
-  padding: 24px;
+  padding: 50px;
   text-align: center;
   transition: all 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.1);

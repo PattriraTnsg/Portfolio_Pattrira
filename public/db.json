@@ -86,25 +86,25 @@
         {
           "id": 1,
           "name": "Java",
-          "percentage": 75,
+          "percentage": 60,
           "icon": "/icons/java.svg"
         },
         {
           "id": 2,
           "name": "Python",
-          "percentage": 80,
+          "percentage": 70,
           "icon": "/icons/python.svg"
         },
         {
           "id": 3,
           "name": "C",
-          "percentage": 65,
+          "percentage": 60,
           "icon": "/icons/c.svg"
         },
         {
           "id": 4,
           "name": "C++",
-          "percentage": 70,
+          "percentage": 65,
           "icon": "/icons/cpp.svg"
         }
       ]
@@ -136,7 +136,7 @@
         {
           "id": 8,
           "name": "Vue.js",
-          "percentage": 75,
+          "percentage": 85,
           "icon": "/icons/vue.svg"
         },
         {
@@ -227,6 +227,16 @@
       "id": 104,
       "name": "Adaptability",
       "icon": "/icons/adaptability.svg"
+    },
+    {
+      "id": 105,
+      "name": "Time Management",
+      "icon": "/icons/time.svg"
+    },
+    {
+      "id": 106,
+      "name": "Critical Thinking",
+      "icon": "/icons/critical.svg"
     }
     ]
   }
