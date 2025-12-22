@@ -152,6 +152,10 @@ export default {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .contact-section{
+    min-height: 100svh;
+  }
+  
   .title {
     font-size: 2.5rem;
   }

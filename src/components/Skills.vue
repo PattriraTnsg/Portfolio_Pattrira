@@ -788,6 +788,7 @@ onMounted(async () => {
 @media (max-width: 600px) {
   .skills-section {
     padding: 60px 15px;
+    min-height: 100svh;
   }
 
   .title {

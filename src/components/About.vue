@@ -303,6 +303,7 @@ export default {
 @media (max-width: 480px) {
   .About-section {
     padding: 3rem 1.5rem;
+    min-height: 100svh;
     gap: 2rem;
   }
 

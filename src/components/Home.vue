@@ -326,7 +326,7 @@ export default {
 
 .start-btn {
   font-size: 1.1rem;
-  padding: 1rem 2rem;
+  padding: 0.5rem 2rem;
   border-radius: 50px;
   cursor: pointer;
   border: none;
@@ -491,7 +491,15 @@ export default {
     height: 220px;
   }
 
+  .profile-img {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  }
+
+  .profile-img:hover {
+    transform: none;
+  }
 }
+
 
 /* Info Cards */
 .info-card {
@@ -648,18 +656,21 @@ export default {
   .home-section {
     flex-direction: column;
     justify-content: flex-start;
-    padding: 100px 6vw 60px; /* เผื่อ navbar */
+    min-height: 100svh;
+    padding: 80px 5vw 40px;
     text-align: center;
   }
 
   .home-content {
     max-width: 100%;
     margin-bottom: 2rem;
+    animation: fadeInUp 0.8s ease-out;
   }
 
   .title {
-    font-size: 2.2rem;
+    font-size: 2rem;
     line-height: 1.25;
+    letter-spacing: 0.5px;
   }
 
   .subtitle {
@@ -688,6 +699,6 @@ export default {
     display: none;
   }
 
-
+  
 }
 </style>

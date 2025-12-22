@@ -204,7 +204,7 @@ export default {
 /* Achievements Section */
 .Achievements-section {
   background-color: rgb(242, 204, 123);
-  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
   align-items: center;
