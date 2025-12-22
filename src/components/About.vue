@@ -192,10 +192,6 @@ export default {
   transform: scale(1.05);
 }
 
-/* ===============================================
-   STUDENT DETAILS
-   =============================================== */
-
 .student-detail-container {
   width: 100%;
   display: flex;
