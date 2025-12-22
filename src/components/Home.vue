@@ -153,7 +153,7 @@ export default {
 /* Home Section */
 .home-section {
   background: rgb(242, 204, 123);
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -481,6 +481,18 @@ export default {
   object-fit: cover;
 }
 
+@media (max-width: 768px) {
+  .profile-section {
+    margin-top: 1.5rem;
+  }
+
+  .profile-img-wrapper {
+    width: 220px;
+    height: 220px;
+  }
+
+}
+
 /* Info Cards */
 .info-card {
   position: absolute;
@@ -632,38 +644,50 @@ export default {
 }
 
 /* Responsive */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .home-section {
     flex-direction: column;
-    padding: 3rem 5vw;
-    justify-content: center;
+    justify-content: flex-start;
+    padding: 100px 6vw 60px; /* เผื่อ navbar */
+    text-align: center;
   }
 
   .home-content {
     max-width: 100%;
-    text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
 
   .title {
-    font-size: 3rem;
+    font-size: 2.2rem;
+    line-height: 1.25;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
   }
 
   .btn-group {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .start-btn {
+    width: 100%;
+    max-width: 280px;
     justify-content: center;
   }
 
   .social-links {
     justify-content: center;
+    margin-bottom: 2rem;
   }
 
-  .profile-img-wrapper {
-    width: 300px;
-    height: 300px;
-  }
-
-  .info-card {
+  .info-card,
+  .info-card-nobg {
     display: none;
   }
+
+
 }
 </style>
