@@ -1,5 +1,5 @@
 <template>
-  <section class="skills-section">
+  <section class="skills-section" style="font-family: 'Oswald', monospace">
     <div class="skills-content">
       <!-- header + switch -->
       <div class="skills-header">

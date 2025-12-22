@@ -14,6 +14,28 @@
             <span class="logo-last">T</span>
           </h1>
 
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#F2CC7B"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </button>
+
           <!--link แต่ละ Section -->
           <div
             class="collapse navbar-collapse justify-content-end"
@@ -98,11 +120,11 @@
 </template>
 
 <script>
+import Home from "./components/Home.vue";
 import About from "./components/About.vue";
 import Skills from "./components/Skills.vue";
-import Contact from "./components/Contact.vue";
-import Home from "./components/Home.vue";
 import Achievement from "./components/Achievement.vue";
+import Contact from "./components/Contact.vue";
 
 export default {
   name: "App",
@@ -119,7 +141,7 @@ export default {
     };
   },
   mounted() {
-    window.addEventListener("scroll", this.handleScroll);
+    window.addEventListener("scroll", this.handleScroll, { passive: true });
   },
   beforeUnmount() {
     window.removeEventListener("scroll", this.handleScroll);
@@ -132,7 +154,14 @@ export default {
         ?.scrollIntoView({ behavior: "smooth" });
     },
     handleScroll() {
-      const sections = ["Home", "About", "Education", "Achievement", "Skills", "Contact"];
+      const sections = [
+        "Home",
+        "About",
+        "Education",
+        "Achievement",
+        "Skills",
+        "Contact",
+      ];
       const scrollPosition = window.scrollY + 100;
       for (let section of sections) {
         const element = document.getElementById(section);
@@ -155,7 +184,14 @@ export default {
 </script>
 
 <style scoped>
-/* Navbar */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
 .navbar {
   background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
   color: white;
@@ -176,9 +212,17 @@ export default {
   opacity: 0.3;
 }
 
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
 /* Logo Animation */
 .logo {
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -316,62 +360,67 @@ export default {
   display: none;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .navbar {
-    padding: 10px 20px;
+    padding: 8px 16px;
   }
 
-  .logo {
-    font-size: 1.5rem;
+  .nav-item {
+    margin: 4px 0;
   }
 
   .nav-link {
-    font-size: 1rem;
-    padding: 6px 12px;
+    font-size: 0.95rem;
+    padding: 10px 12px;
+    min-height: 44px; /* กดง่าย */
+  }
+
+  .nav-underline {
+    display: none;
   }
 
   .contact-btn {
     margin-left: 0;
-    margin-top: 3px;
+    margin-top: 8px;
+    width: 100%;
+    text-align: center;
   }
 }
 
-/* Other sections styles */
 .title {
-  font-size: 36px;
+  font-size: clamp(28px, 6vw, 36px);
   font-weight: bold;
 }
 
 .quote h2 {
-  font-size: 24px;
+  font-size: clamp(18px, 5vw, 24px);
   font-weight: bold;
 }
 
 .quote h4 {
-  font-size: 18px;
+  font-size: clamp(14px, 4vw, 18px);
   font-weight: normal;
 }
 
 .profile-img img {
-  width: 500px;
-  height: 500px;
+  width: min(70vw, 320px);
+  height: min(70vw, 320px);
+  border-radius: 50%;
+  object-fit: cover;
   border-radius: 50%;
   object-fit: cover;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .profile-img {
-  padding: 8rem;
-  padding-left: 8px;
+  padding: 4rem 1rem;
 }
 
 @media (max-width: 768px) {
   .home-section {
     flex-direction: column;
     text-align: center;
-    height: auto;
-    padding: 10vw 5vw;
+    padding: 12vw 6vw;
   }
 
   .text-content {
@@ -379,7 +428,7 @@ export default {
   }
 
   .profile-img {
-    margin-top: 20px;
+    margin-top: 24px;
   }
 }
 </style>
