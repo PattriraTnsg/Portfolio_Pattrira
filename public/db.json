@@ -105,7 +105,7 @@
         {
           "id": 1,
           "name": "Java",
-          "percentage": 60,
+          "percentage": 50,
           "icon": "/icons/java.svg"
         },
         {
@@ -117,13 +117,13 @@
         {
           "id": 3,
           "name": "C",
-          "percentage": 60,
+          "percentage": 55,
           "icon": "/icons/c.svg"
         },
         {
           "id": 4,
           "name": "C++",
-          "percentage": 65,
+          "percentage": 60,
           "icon": "/icons/cpp.svg"
         }
       ]
@@ -137,37 +137,37 @@
         {
           "id": 5,
           "name": "HTML5",
-          "percentage": 85,
+          "percentage": 70,
           "icon": "/icons/html.svg"
         },
         {
           "id": 6,
           "name": "CSS",
-          "percentage": 85,
+          "percentage": 70,
           "icon": "/icons/css.svg"
         },
         {
           "id": 7,
           "name": "JavaScript",
-          "percentage": 75,
+          "percentage": 60,
           "icon": "/icons/javascript.svg"
         },
         {
           "id": 8,
           "name": "Vue.js",
-          "percentage": 85,
+          "percentage": 70,
           "icon": "/icons/vue.svg"
         },
         {
           "id": 9,
           "name": "Next.js",
-          "percentage": 65,
+          "percentage": 50,
           "icon": "/icons/nextjs.svg"
         },
         {
           "id": 10,
           "name": "RESTful API",
-          "percentage": 70,
+          "percentage": 60,
           "icon": "/icons/api.svg"
         }
       ]
@@ -181,7 +181,7 @@
         {
           "id": 11,
           "name": "Python (Data / ML)",
-          "percentage": 65,
+          "percentage": 60,
           "icon": "/icons/python.svg"
         }
       ]
@@ -195,13 +195,13 @@
         {
           "id": 13,
           "name": "GitHub",
-          "percentage": 75,
+          "percentage": 55,
           "icon": "/icons/github.svg"
         },
         {
           "id": 14,
           "name": "VS Code",
-          "percentage": 85,
+          "percentage": 80,
           "icon": "/icons/vscode.svg"
         },
         {
@@ -219,7 +219,7 @@
         {
           "id": 17,
           "name": "Figma",
-          "percentage": 75,
+          "percentage": 65,
           "icon": "/icons/figma.svg"
         }
       ]
