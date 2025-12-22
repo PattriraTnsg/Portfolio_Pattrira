@@ -48,7 +48,7 @@
           </svg>
         </button>
         <button class="start-btn secondary" @click="scrollToSection('Contact')">
-          <span>Contect Me</span>
+          <span>Contact Me</span>
         </button>
       </div>
 
@@ -150,6 +150,10 @@ export default {
 </script>
 
 <style scoped>
+/* ===============================================
+   BASE STYLES - ใช้ได้กับทุกหน้าจอ
+   =============================================== */
+
 /* Home Section */
 .home-section {
   background: rgb(242, 204, 123);
@@ -171,6 +175,7 @@ export default {
   height: 100%;
   overflow: hidden;
   z-index: 0;
+  pointer-events: none;
 }
 
 .circle {
@@ -205,8 +210,7 @@ export default {
 }
 
 @keyframes float {
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(0) rotate(0deg);
   }
   33% {
@@ -240,7 +244,7 @@ export default {
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 1rem;
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
   color: #444a56;
 }
 
@@ -248,25 +252,14 @@ export default {
   display: inline-block;
   animation: wave 2s infinite;
   transform-origin: 70% 70%;
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
 }
 
 @keyframes wave {
-  0%,
-  100% {
-    transform: rotate(0deg);
-  }
-  10%,
-  30% {
-    transform: rotate(14deg);
-  }
-  20% {
-    transform: rotate(-8deg);
-  }
-  40%,
-  100% {
-    transform: rotate(0deg);
-  }
+  0%, 100% { transform: rotate(0deg); }
+  10%, 30% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  40%, 100% { transform: rotate(0deg); }
 }
 
 .greeting-text {
@@ -275,11 +268,12 @@ export default {
 }
 
 .title {
-  font-size: 3rem;
-  margin: 0;
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin: 0 0 1rem 0;
   color: #2c3e50;
   line-height: 1.2;
-  margin-bottom: 1rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .title-line {
@@ -289,18 +283,18 @@ export default {
 }
 
 @keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
   from {
     opacity: 0;
     transform: translateY(20px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .subtitle {
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
   color: #555;
   margin-bottom: 2.5rem;
   font-weight: 300;
@@ -308,12 +302,8 @@ export default {
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* Buttons */
@@ -322,20 +312,23 @@ export default {
   gap: 1.5rem;
   margin-bottom: 3rem;
   animation: fadeIn 1s ease-out 0.8s backwards;
+  flex-wrap: wrap;
 }
 
 .start-btn {
-  font-size: 1.1rem;
-  padding: 0.5rem 2rem;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  padding: 0.75rem 2rem;
   border-radius: 50px;
   cursor: pointer;
   border: none;
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   transition: all 0.3s ease;
   font-weight: 600;
   letter-spacing: 0.5px;
+  white-space: nowrap;
 }
 
 .start-btn.primary {
@@ -388,6 +381,7 @@ export default {
   color: #444a56;
   transition: all 0.3s ease;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .social-icon:hover {
@@ -401,6 +395,7 @@ export default {
   position: relative;
   z-index: 1;
   animation: fadeInRight 1s ease-out;
+  flex-shrink: 0;
 }
 
 @keyframes fadeInRight {
@@ -416,8 +411,9 @@ export default {
 
 .profile-img-wrapper {
   position: relative;
-  width: 400px;
-  height: 400px;
+  width: clamp(250px, 30vw, 400px);
+  height: clamp(250px, 30vw, 400px);
+  margin: 0 auto;
 }
 
 .profile-ring {
@@ -452,12 +448,8 @@ export default {
 }
 
 @keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 .profile-img {
@@ -480,26 +472,6 @@ export default {
   height: 100%;
   object-fit: cover;
 }
-
-@media (max-width: 768px) {
-  .profile-section {
-    margin-top: 1.5rem;
-  }
-
-  .profile-img-wrapper {
-    width: 220px;
-    height: 220px;
-  }
-
-  .profile-img {
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  }
-
-  .profile-img:hover {
-    transform: none;
-  }
-}
-
 
 /* Info Cards */
 .info-card {
@@ -524,11 +496,10 @@ export default {
 
 .info-card-nobg {
   position: absolute;
-  padding: -9rem -5rem;
+  padding: 0;
   border-radius: 50px;
   display: flex;
   align-items: center;
-  gap: 1rem;
   animation: floatCard 4s ease-in-out infinite;
   cursor: pointer;
   transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -557,13 +528,8 @@ export default {
 }
 
 @keyframes floatCard {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
 }
 
 .card-icon {
@@ -577,10 +543,9 @@ export default {
 }
 
 .card-icon img {
-  width: 150px;
+  width: clamp(80px, 12vw, 150px);
   height: auto;
   object-fit: contain;
-  align-items: center;
   transition: all 0.4s ease;
 }
 
@@ -598,12 +563,12 @@ export default {
   animation: fadeIn 1s ease-out 1.5s backwards;
   cursor: pointer;
   transition: all 0.3s ease;
+  z-index: 10;
 }
 
 .scroll-indicator:hover {
   transform: translateX(-50%) translateY(-5px);
 }
-
 
 .mouse {
   width: 30px;
@@ -651,54 +616,287 @@ export default {
   letter-spacing: 1.5px;
 }
 
-/* Responsive */
+/* ===============================================
+   RESPONSIVE BREAKPOINTS
+   =============================================== */
+
+/* Tablet Landscape - 1024px */
+@media (max-width: 1024px) {
+  .home-section {
+    padding: 4rem 6vw;
+    gap: 3rem;
+  }
+
+  .home-content {
+    max-width: 55%;
+  }
+
+  .profile-img-wrapper {
+    width: 300px;
+    height: 300px;
+  }
+
+  .card-icon img {
+    width: 100px;
+  }
+}
+
+/* Tablet Portrait - 768px */
 @media (max-width: 768px) {
   .home-section {
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     min-height: 100svh;
-    padding: 80px 5vw 40px;
+    padding: 100px 5vw 60px;
     text-align: center;
+    gap: 2rem;
+  }
+
+  /* Background circles - ลดขนาดให้เหมาะกับหน้าจอเล็ก */
+  .circle-1 {
+    width: 200px;
+    height: 200px;
+  }
+
+  .circle-2 {
+    width: 150px;
+    height: 150px;
+  }
+
+  .circle-3 {
+    width: 100px;
+    height: 100px;
   }
 
   .home-content {
     max-width: 100%;
-    margin-bottom: 2rem;
     animation: fadeInUp 0.8s ease-out;
+  }
+
+  .greeting {
+    justify-content: center;
   }
 
   .title {
     font-size: 2rem;
-    line-height: 1.25;
-    letter-spacing: 0.5px;
+    line-height: 1.3;
   }
 
   .subtitle {
     font-size: 1.2rem;
+    margin-bottom: 2rem;
   }
 
   .btn-group {
-    flex-direction: column;
+    flex-direction: row;
     gap: 1rem;
-    align-items: center;
-  }
-
-  .start-btn {
-    width: 100%;
-    max-width: 280px;
-    justify-content: center;
-  }
-
-  .social-links {
     justify-content: center;
     margin-bottom: 2rem;
   }
 
+  .start-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .social-links {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .social-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .profile-section {
+    margin-top: 0;
+    order: -1;
+  }
+
+  .profile-img-wrapper {
+    width: 250px;
+    height: 250px;
+  }
+
+  .profile-img:hover {
+    transform: scale(1.02);
+  }
+
+  /* Info Cards - ซ่อนในหน้าจอ tablet */
   .info-card,
   .info-card-nobg {
     display: none;
   }
 
-  
+  .scroll-indicator {
+    bottom: 2rem;
+  }
+}
+
+/* Mobile Large - 480px */
+@media (max-width: 480px) {
+  .home-section {
+    padding: 80px 5vw 40px;
+  }
+
+  .greeting {
+    font-size: 1.1rem;
+    gap: 0.3rem;
+  }
+
+  .wave {
+    font-size: 1.5rem;
+  }
+
+  .title {
+    font-size: 1.6rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .btn-group {
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  .start-btn {
+    width: 100%;
+    max-width: 100%;
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .social-links {
+    gap: 0.75rem;
+  }
+
+  .social-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .social-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .profile-img-wrapper {
+    width: 200px;
+    height: 200px;
+  }
+
+  .profile-ring {
+    border-width: 1.5px;
+  }
+
+  .scroll-indicator {
+    bottom: 1.5rem;
+  }
+
+  .scroll-indicator p {
+    font-size: 0.75rem;
+  }
+
+  .mouse {
+    width: 25px;
+    height: 45px;
+  }
+}
+
+/* Mobile Small - 375px */
+@media (max-width: 375px) {
+  .home-section {
+    padding: 70px 4vw 30px;
+  }
+
+  .title {
+    font-size: 1.4rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+  }
+
+  .start-btn {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.85rem;
+  }
+
+  .profile-img-wrapper {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+/* Landscape Mode สำหรับ Mobile */
+@media (max-height: 600px) and (orientation: landscape) {
+  .home-section {
+    flex-direction: row;
+    min-height: 100vh;
+    padding: 2rem 5vw;
+  }
+
+  .home-content {
+    max-width: 50%;
+    text-align: left;
+  }
+
+  .greeting {
+    justify-content: flex-start;
+  }
+
+  .profile-section {
+    order: 0;
+  }
+
+  .profile-img-wrapper {
+    width: 200px;
+    height: 200px;
+  }
+
+  .scroll-indicator {
+    display: none;
+  }
+
+  .btn-group {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .social-links {
+    justify-content: flex-start;
+  }
+}
+
+/* ===============================================
+   ACCESSIBILITY & PERFORMANCE
+   =============================================== */
+
+/* Reduce Motion สำหรับผู้ที่ไม่ชอบ animation */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .start-btn.primary {
+    border: 2px solid #fff;
+  }
+
+  .social-icon {
+    border: 2px solid #444a56;
+  }
 }
 </style>
