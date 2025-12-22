@@ -29,6 +29,11 @@
           <span class="detail-label">University : </span>
           <span class="detail-value">{{ student.University }}</span>
         </div>
+        <div class="student-detail">
+          <span class="detail-icon">📚</span>
+          <span class="detail-label">GPX: </span>
+          <span class="detail-value">{{ student.gpx }}</span>
+        </div>
       </div>
     </div>
   </div>
@@ -60,6 +65,7 @@ export default {
         nickName: "Anfield",
         major: "Computer Science",
         University: "Kasetsart University Sriracha Campus",
+        gpx: 3.92,
       },
     };
   },
@@ -87,7 +93,7 @@ export default {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: left;
+  justify-content: center;
   padding: 5vw;
   gap: 4rem;
   position: relative;
@@ -151,8 +157,6 @@ export default {
   background: #333;
   border-radius: 1.5rem;
   padding: 2rem;
-  margin-top: 4rem;
-  margin-left: 10rem;
   box-shadow: 
     0 20px 60px rgba(0, 0, 0, 0.3),
     0 0 0 1px rgba(255, 255, 255, 0.1);
@@ -196,7 +200,11 @@ export default {
 }
 
 .student-info .title {
-  margin-top: 1rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: rgb(242, 204, 123);
+  letter-spacing: 2px;
 }
 
 .title {
@@ -228,8 +236,6 @@ export default {
   color: #ebebeb;
   font-size: 60px;
   font-weight: bold;
-  position: absolute;
-  right: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -243,7 +249,6 @@ export default {
   border-radius: 1.5rem;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(252, 202, 75, 0.2);
-  margin-right: 5rem;
   box-shadow: 0 5px 10px rgba(252, 202, 75);
 }
 
@@ -270,31 +275,39 @@ export default {
   border-left: 4px solid rgb(242, 204, 123);
 }
 
-/* Responsive Design */
 @media (max-width: 1024px) {
   .About-section {
     flex-direction: column;
-    padding: 3rem 2rem;
+    padding: 4rem 2rem;
   }
 
   .student-card,
   .intro-content {
     max-width: 100%;
-    width: 100%;
+  }
+
+  .title {
+    font-size: 2rem;
   }
 
   .quote h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .quote h4 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 }
 
+
 @media (max-width: 480px) {
+  .About-section {
+    padding: 3rem 1.5rem;
+    gap: 2rem;
+  }
+
   .title {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   .profile_img {
@@ -302,12 +315,19 @@ export default {
     height: 8rem;
   }
 
+  .student-detail {
+    font-size: 0.85rem;
+    
+  }
+
   .quote h2 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    text-align: center;
   }
 
   .quote h4 {
     font-size: 1.1rem;
   }
 }
+
 </style>
