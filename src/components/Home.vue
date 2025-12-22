@@ -150,11 +150,6 @@ export default {
 </script>
 
 <style scoped>
-/* ===============================================
-   BASE STYLES - ใช้ได้กับทุกหน้าจอ
-   =============================================== */
-
-/* Home Section */
 .home-section {
   background: rgb(242, 204, 123);
   min-height: 100vh;
@@ -616,11 +611,8 @@ export default {
   letter-spacing: 1.5px;
 }
 
-/* ===============================================
-   RESPONSIVE BREAKPOINTS
-   =============================================== */
 
-/* Tablet Landscape - 1024px */
+/* Tablet Landscape */
 @media (max-width: 1024px) {
   .home-section {
     padding: 4rem 6vw;
@@ -641,7 +633,7 @@ export default {
   }
 }
 
-/* Tablet Portrait - 768px */
+/* Tablet Portrait*/
 @media (max-width: 768px) {
   .home-section {
     flex-direction: column;
@@ -652,7 +644,6 @@ export default {
     gap: 2rem;
   }
 
-  /* Background circles - ลดขนาดให้เหมาะกับหน้าจอเล็ก */
   .circle-1 {
     width: 200px;
     height: 200px;
@@ -874,29 +865,4 @@ export default {
   }
 }
 
-/* ===============================================
-   ACCESSIBILITY & PERFORMANCE
-   =============================================== */
-
-/* Reduce Motion สำหรับผู้ที่ไม่ชอบ animation */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* High Contrast Mode */
-@media (prefers-contrast: high) {
-  .start-btn.primary {
-    border: 2px solid #fff;
-  }
-
-  .social-icon {
-    border: 2px solid #444a56;
-  }
-}
 </style>
