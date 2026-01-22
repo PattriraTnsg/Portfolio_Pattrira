@@ -216,7 +216,7 @@ onMounted(async () => {
 
     techCategories.value = data.skills.tech
     softSkills.value = data.skills.soft
-    setDefaultCategory('web')
+    setDefaultCategory('programming')
   } catch (error) {
     console.error('Error loading skills:', error)
   }
