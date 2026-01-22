@@ -126,6 +126,12 @@
           "name": "C++",
           "percentage": 60,
           "icon": "/icons/cpp.svg"
+        },
+        {
+          "id": 5,
+          "name": "Kotlin",
+          "percentage": 70,
+          "icon": "/icons/kotlin.svg"
         }
       ]
     },
