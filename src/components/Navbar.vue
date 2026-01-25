@@ -90,7 +90,7 @@
                 :class="{ active: activeSection === 'Project' }"
                 @click="scrollToSection('Project')"
               >
-                <span class="nav-text">Project</span>
+                <span class="nav-text">Projects</span>
                 <span class="nav-underline"></span>
               </a>
             </li>
