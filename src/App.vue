@@ -18,6 +18,10 @@
       <Skills />
     </section>
 
+    <section id="Project" ref="Project">
+      <Project />
+    </section>
+
     <section id="Contact" ref="Contact">
       <Contact />
     </section>
@@ -30,7 +34,9 @@ import Home from "./components/Home.vue";
 import About from "./components/About.vue";
 import Skills from "./components/Skills.vue";
 import Achievement from "./components/Achievement.vue";
+import Project from "./components/Project.vue";
 import Contact from "./components/Contact.vue";
+
 
 export default {
   name: "App",
@@ -40,6 +46,7 @@ export default {
     About,
     Skills,
     Achievement,
+    Project,
     Contact,
   },
   data() {
@@ -67,6 +74,7 @@ export default {
         "Education",
         "Achievement",
         "Skills",
+        "Project",
         "Contact",
       ];
       const scrollPosition = window.scrollY + 100;

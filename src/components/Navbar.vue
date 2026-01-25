@@ -86,6 +86,16 @@
             </li>
             <li class="nav-item">
               <a
+                class="nav-link"
+                :class="{ active: activeSection === 'Project' }"
+                @click="scrollToSection('Project')"
+              >
+                <span class="nav-text">Project</span>
+                <span class="nav-underline"></span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
                 class="nav-link contact-btn"
                 @click="scrollToSection('Contact')"
               >
@@ -113,6 +123,7 @@ export default {
         { id: "About", label: "About" },
         { id: "Achievement", label: "Achievement" },
         { id: "Skills", label: "Skills" },
+        { id: "Project", label: "Project" },
         { id: "Contact", label: "Contact" },
       ],
     };

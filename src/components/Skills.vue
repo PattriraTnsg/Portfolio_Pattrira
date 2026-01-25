@@ -233,7 +233,7 @@ onMounted(async () => {
 .skills-section {
   position: relative;
   min-height: 100vh;
-  background: #333;
+  background: #1a1a1a;
   padding: 80px 20px;
   overflow: hidden;
 }

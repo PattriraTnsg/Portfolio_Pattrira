@@ -89,7 +89,7 @@ export default {
 <style>
 
 .About-section {
-  background: #333;
+  background: #1a1a1a;
   min-height: 100vh;
   display: flex;
   align-items: center;

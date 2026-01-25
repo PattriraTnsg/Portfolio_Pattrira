@@ -190,6 +190,12 @@
           "name": "Python (Data / ML)",
           "percentage": 60,
           "icon": "/icons/python.svg"
+        },
+        {
+          "id": 12,
+          "name": "ollama",
+          "percentage": 30,
+          "icon": "/icons/ollama.svg"
         }
       ]
     },
@@ -228,6 +234,18 @@
           "name": "Figma",
           "percentage": 65,
           "icon": "/icons/figma.svg"
+        },
+        {
+          "id": 18,
+          "name": "Docker",
+          "percentage": 20,
+          "icon": "/icons/docker.svg"
+        },
+        {
+          "id": 19,
+          "name": "n8n",
+          "percentage": 30,
+          "icon": "/icons/n8n.svg"
         }
       ]
     }
@@ -265,6 +283,25 @@
       "icon": "/icons/critical.svg"
     }
     ]
-  }
+  },
+  "projects": [
+    {
+      "title": "Portfolio Website",
+      "description": "Personal portfolio built with Vue 3",
+      "tech": ["Vue", "CSS", "JavaScript"],
+      "cover": "/img/projects/portfolio.png",
+      "demo": "https://your-demo-link.com",
+      "github": "https://github.com/you/portfolio",
+      "date": "2024-10-01"
+    },
+    {
+      "title": "Todo App",
+      "description": "CRUD Todo App with localStorage",
+      "tech": ["JavaScript", "HTML", "CSS"],
+      "cover": "/img/projects/todo.png",
+      "github": "https://github.com/you/todo-app",
+      "date": "2024-08-15"
+    }
+  ]
 }
 
