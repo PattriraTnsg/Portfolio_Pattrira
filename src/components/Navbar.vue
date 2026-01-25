@@ -70,7 +70,7 @@
                 :class="{ active: activeSection === 'Achievement' }"
                 @click="scrollToSection('Achievement')"
               >
-                <span class="nav-text">Acheivements</span>
+                <span class="nav-text">Achievements</span>
                 <span class="nav-underline"></span>
               </a>
             </li>
@@ -157,7 +157,7 @@ export default {
         const rect = section.getBoundingClientRect();
         if (rect.top <= 120 && rect.bottom >= 120) {
           this.activeSection = link.id;
-          this.isLightMode = ["About","Skills"].includes(link.id);
+          this.isLightMode = ["About","Skills","Contact"].includes(link.id);
           break;
         }
       }

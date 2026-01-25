@@ -44,16 +44,40 @@
                 </button>
 
                 <div class="lightbox-content">
-                    <div class="lightbox-image">
-                        <img :src="active.cover" :alt="active.title" />
+
+                    <div class="lightbox-media-column">
+                        <div class="main-image-wrapper" v-if="active.images?.length">
+                            <img :src="active.images[activeImageIndex]" :alt="active.title" class="main-img" />
+
+                            <button class="nav prev" @click.stop="prevImage" v-if="active.images.length > 1">
+                                ‹
+                            </button>
+
+                            <button class="nav next" @click.stop="nextImage" v-if="active.images.length > 1">
+                                ›
+                            </button>
+                        </div>
+
+                        <div class="thumbnails-container" v-if="active.images.length > 1">
+                            <div class="thumbnails">
+                                <img v-for="(img, i) in active.images" :key="i" :src="img"
+                                    :class="{ active: i === activeImageIndex }" @click="activeImageIndex = i" />
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="info">
-                        <h2>{{ active.title }}</h2>
-                        <p>{{ active.description }}</p>
+                    <div class="lightbox-info-column">
+                        <div class="info-header">
+                            <h2>{{ active.title }}</h2>
+                            <p class="subtitle" v-if="active.date">{{ active.date }}</p>
+                        </div>
 
-                        <div class="tags">
-                            <span v-for="t in active.tech" :key="t">{{ t }}</span>
+                        <div class="info-body">
+                            <p>{{ active.description }}</p>
+
+                            <div class="tags">
+                                <span v-for="t in active.tech" :key="t">{{ t }}</span>
+                            </div>
                         </div>
 
                         <div class="actions">
@@ -66,7 +90,7 @@
                                 </svg>
                                 Live Demo
                             </a>
-                            <a v-if="active.github" :href="active.github" target="_blank" class="btn ghost">
+                             <a v-if="active.github" :href="active.github" target="_blank" class="btn ghost">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2">
                                     <path
@@ -77,6 +101,7 @@
                             </a>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -92,7 +117,8 @@ export default {
             items: [],
             loading: true,
             active: null,
-            activeTech: 'All'
+            activeTech: 'All',
+            activeImageIndex: 0
         };
     },
 
@@ -128,11 +154,21 @@ export default {
         },
         open(p) {
             this.active = p;
+            this.activeImageIndex = 0; // เริ่มที่รูปแรก
             document.body.style.overflow = 'hidden';
         },
         close() {
             this.active = null;
             document.body.style.overflow = '';
+        },
+        nextImage() {
+            this.activeImageIndex =
+                (this.activeImageIndex + 1) % this.active.images.length;
+        },
+        prevImage() {
+            this.activeImageIndex =
+                (this.activeImageIndex - 1 + this.active.images.length) %
+                this.active.images.length;
         }
     }
 };
@@ -144,20 +180,21 @@ export default {
     padding: 5rem 5vw;
     background: rgb(242, 204, 123);
     display: flex;
-   justify-content: center;
-   align-items: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .projects-wrapper {
-  width: 100%;
-  max-width: 1500px;
-  background: #1a1a1a; /* สี card */
-  border-radius: 32px;
-  padding: 4rem 3rem;
-  box-shadow:
-    0 30px 80px rgba(0, 0, 0, 0.45),
-    inset 0 0 0 2px rgba(242, 204, 123, 0.25);
-  position: relative;
+    width: 100%;
+    max-width: 1500px;
+    background: #1a1a1a;
+    /* สี card */
+    border-radius: 32px;
+    padding: 4rem 3rem;
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.45),
+        inset 0 0 0 2px rgba(242, 204, 123, 0.25);
+    position: relative;
 }
 
 
@@ -184,14 +221,14 @@ export default {
 }
 
 @media (max-width: 768px) {
-  .projects-wrapper {
-    padding: 2.5rem 1.5rem;
-    border-radius: 20px;
-  }
+    .projects-wrapper {
+        padding: 2.5rem 1.5rem;
+        border-radius: 20px;
+    }
 
-  .projects-section {
-    padding: 2rem 1rem;
-  }
+    .projects-section {
+        padding: 2rem 1rem;
+    }
 }
 
 
@@ -387,15 +424,17 @@ export default {
 }
 
 .lightbox-inner {
-    background: #333;
+    background: #1a1a1a; 
     border-radius: 24px;
-    max-width: 900px;
-    width: 100%;
-    max-height: 90vh;
-    overflow-y: auto;
+    max-width: 2000px; 
+    width: 90%;
+    max-height: 90vh; 
+    overflow-y: auto; 
     position: relative;
-    animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    
     border: 2px solid rgba(242, 204, 123, 0.3);
+    display: flex;
+    flex-direction: column;
 }
 
 @keyframes slideUp {
@@ -412,49 +451,130 @@ export default {
 
 .lightbox-content {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-}
-
-.lightbox-image {
-    width: 100%;
-    border-radius: 24px 24px 0 0;
+    grid-template-columns: 1.8fr 1.2fr; 
+    height: 100%;
     overflow: hidden;
 }
 
-.lightbox-image img {
-    width: 100%;
-    height: auto;
-    max-height: 400px;
-    object-fit: cover;
+.lightbox-media-column {
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    height: 100%;
 }
 
-.info {
+.main-image-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
     padding: 2rem;
-    padding-top: 0;
 }
 
-.info h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+.main-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(38, 36, 32, 0.5);
     color: #f2cc7b;
-    font-weight: 700;
+    border: 1px solid rgba(242, 204, 123, 0.3);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 10;
+}
+.nav:hover {
+    background: #333;
+    color: rgb(242, 204, 123);
+}
+.nav.prev { left: 20px; }
+.nav.next { right: 20px; }
+
+/* Thumbnails ด้านล่าง */
+.thumbnails-container {
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.thumbnails {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.thumbnails img {
+    width: 60px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 4px;
+    opacity: 0.5;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.2s;
+}
+.thumbnails img.active {
+    opacity: 1;
+    border-color: #f2cc7b;
+    transform: scale(1.1);
 }
 
-.info p {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: #ddd;
-    margin-bottom: 1.5rem;
+/* --- ฝั่งขวา: ข้อมูล (Info Column) --- */
+.lightbox-info-column {
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* ให้ scroll ได้เฉพาะฝั่งข้อมูล */
+    background: #1a1a1a;
+    position: relative;
 }
 
-.info .tags {
+.info-header h2 {
+    font-size: 2.2rem;
+    color: #f2cc7b;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.subtitle {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.info-body p {
+    color: #ccc;
+    font-size: 1rem;
+    line-height: 1.8;
     margin-bottom: 2rem;
 }
 
+.lightbox-info-column .tags {
+    margin-bottom: auto; 
+}
+
 .actions {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
     display: flex;
-    gap: 1rem;
+    gap: 1rem;          
     flex-wrap: wrap;
 }
 
@@ -490,60 +610,41 @@ export default {
     transform: translateY(-2px);
 }
 
+
+/* ปรับตำแหน่งปุ่มปิด (Close) */
 .close {
     position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(242, 204, 123, 0.2);
-    border: 2px solid #f2cc7b;
-    color: #f2cc7b;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s;
-    z-index: 10;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    background: transparent;
+    border: none;
+    color: #666;
 }
-
 .close:hover {
-    background: #f2cc7b;
-    color: #333;
+    color: #f2cc7b;
+    background: transparent;
     transform: rotate(90deg);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .projects-section {
-        padding: 3rem 4vw;
+/* --- Responsive (มือถือให้กลับมาเรียงตั้ง) --- */
+@media (max-width: 900px) {
+    .lightbox-inner {
+        height: auto;
+        max-height: 90vh;
+        overflow-y: auto;
     }
-
-    .grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+    .lightbox-content {
+        grid-template-columns: 1fr; /* กลับมาเป็นคอลัมน์เดียว */
+        height: auto;
+        overflow: visible;
     }
-
-    .lightbox {
-        padding: 1rem;
+    .lightbox-media-column {
+        height: 300px; /* กำหนดความสูงรูปในมือถือ */
     }
-
-    .info {
+    .lightbox-info-column {
         padding: 1.5rem;
-    }
-
-    .info h2 {
-        font-size: 1.5rem;
-    }
-
-    .actions {
-        flex-direction: column;
-    }
-
-    .btn {
-        width: 100%;
-        justify-content: center;
+        overflow: visible;
     }
 }
 

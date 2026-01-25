@@ -12,7 +12,9 @@
       "title": "MathLab Certificate",
       "issuer": "MathLab Academy",
       "date": "2024-03-04",
-      "tags": ["MathLab"],
+      "tags": [
+        "MathLab"
+      ],
       "image": "Mathlab_cer.jpg",
       "description": "Fundamentals of MATLAB scripting, matrices, and visualization.",
       "verified": true
@@ -21,67 +23,77 @@
       "title": "LINK Certified NETWORK CABLING for Engineering",
       "issuer": "LINK",
       "date": "2025-09-17",
-      "tags": ["Network", "Engineering"],
+      "tags": [
+        "Network",
+        "Engineering"
+      ],
       "image": "LINK_cer.jpeg",
       "description": "Practical skills in network cabling standards, connectors, and testing.",
       "verified": true
     },
-
     {
       "title": "Smart Chatbot with Google Sheets",
       "issuer": "Digital Academy Thailand",
       "date": "2024-07-18",
-      "tags": ["Chatbot", "Automation"],
+      "tags": [
+        "Chatbot",
+        "Automation"
+      ],
       "image": "Chatbot_cer.jpg",
       "description": "Building a chatbot integrated with Google Sheets via automation tools.",
       "verified": false
     },
-
     {
       "title": "Basic Cybersecurity",
       "issuer": "NCSA Thailand (MOOC)",
       "date": "2025-11-15",
-      "tags": ["Cybersecurity"],
+      "tags": [
+        "Cybersecurity"
+      ],
       "image": "NCSA_cer.jpg",
       "description": "Introduction to cybersecurity concepts, common threats, and prevention.",
       "verified": false
     },
-
     {
       "title": "Cybersecurity Training Program",
       "issuer": "Digital Academy Thailand",
       "date": "2024-11-17",
-      "tags": ["Cybersecurity"],
+      "tags": [
+        "Cybersecurity"
+      ],
       "image": "Cybersecurity_cer.jpg",
       "description": "Hands-on cybersecurity training and simulated attack-defense scenarios.",
       "verified": true
     },
-
     {
       "title": "FutureDev: Web Application Development with Next.js",
       "issuer": "FutureDev Thailand",
       "date": "2025-11-12",
-      "tags": ["Frontend"],
+      "tags": [
+        "Frontend"
+      ],
       "image": "Next_JS_cer.jpg",
       "description": "Developing modern web applications using Next.js and full-stack concepts.",
       "verified": true
     },
-
     {
       "title": "Front-end Web Development using React",
       "issuer": "Digital Academy Thailand",
       "date": "2025-04-21",
-      "tags": ["Frontend"],
+      "tags": [
+        "Frontend"
+      ],
       "image": "React_cer.jpg",
       "description": "Front-end development with React, components, hooks, and UI design.",
       "verified": true
     },
-
     {
       "title": "Academic Excellence Award (Outstanding Academic Performance)",
       "issuer": "Kasetsart University",
       "date": "2024-04-08",
-      "tags": ["KUSRC"],
+      "tags": [
+        "KUSRC"
+      ],
       "image": "cer_66.jpg",
       "description": "Awarded by Kasetsart University for outstanding academic performance in the 2024 academic year, recognizing students who achieved a GPA of 3.50 or higher and met all undergraduate academic requirements.",
       "verified": true
@@ -90,218 +102,309 @@
       "title": "Academic Excellence Award (Outstanding Academic Performance)",
       "issuer": "Kasetsart University",
       "date": "2025-07-25",
-      "tags": ["KUSRC"],
+      "tags": [
+        "KUSRC"
+      ],
       "image": "cer_67.jpg",
       "description": "Awarded by Kasetsart University for outstanding academic performance in the 2025 academic year, recognizing students who achieved a GPA of 3.50 or higher and met all undergraduate academic requirements.",
       "verified": true
     }
   ],
-   "skills": {
+  "skills": {
     "tech": [
       {
-      "key": "programming",
-      "title": "Programming",
-      "description": "Languages and core computer science fundamentals",
-      "skills": [
-        {
-          "id": 1,
-          "name": "Java",
-          "percentage": 50,
-          "icon": "/icons/java.svg"
-        },
-        {
-          "id": 2,
-          "name": "Python",
-          "percentage": 70,
-          "icon": "/icons/python.svg"
-        },
-        {
-          "id": 3,
-          "name": "C",
-          "percentage": 55,
-          "icon": "/icons/c.svg"
-        },
-        {
-          "id": 4,
-          "name": "C++",
-          "percentage": 60,
-          "icon": "/icons/cpp.svg"
-        },
-        {
-          "id": 5,
-          "name": "Kotlin",
-          "percentage": 70,
-          "icon": "/icons/kotlin.svg"
-        }
-      ]
-    },
-
-    {
-      "key": "web",
-      "title": "Web Development",
-      "description": "Frontend and modern web application development",
-      "skills": [
-        {
-          "id": 5,
-          "name": "HTML5",
-          "percentage": 70,
-          "icon": "/icons/html.svg"
-        },
-        {
-          "id": 6,
-          "name": "CSS",
-          "percentage": 70,
-          "icon": "/icons/css.svg"
-        },
-        {
-          "id": 7,
-          "name": "JavaScript",
-          "percentage": 60,
-          "icon": "/icons/javascript.svg"
-        },
-        {
-          "id": 8,
-          "name": "Vue.js",
-          "percentage": 70,
-          "icon": "/icons/vue.svg"
-        },
-        {
-          "id": 9,
-          "name": "Next.js",
-          "percentage": 50,
-          "icon": "/icons/nextjs.svg"
-        },
-        {
-          "id": 10,
-          "name": "RESTful API",
-          "percentage": 60,
-          "icon": "/icons/api.svg"
-        }
-      ]
-    },
-
-    {
-      "key": "ai-ml",
-      "title": "AI & Machine Learning",
-      "description": "Basic data processing and machine learning foundations",
-      "skills": [
-        {
-          "id": 11,
-          "name": "Python (Data / ML)",
-          "percentage": 60,
-          "icon": "/icons/python.svg"
-        },
-        {
-          "id": 12,
-          "name": "ollama",
-          "percentage": 30,
-          "icon": "/icons/ollama.svg"
-        }
-      ]
-    },
-
-    {
-      "key": "tools",
-      "title": "Tools & Technologies",
-      "description": "Tools and technologies used in real-world development",
-      "skills": [
-        {
-          "id": 13,
-          "name": "GitHub",
-          "percentage": 55,
-          "icon": "/icons/github.svg"
-        },
-        {
-          "id": 14,
-          "name": "VS Code",
-          "percentage": 80,
-          "icon": "/icons/vscode.svg"
-        },
-        {
-          "id": 15,
-          "name": "Postman",
-          "percentage": 70,
-          "icon": "/icons/postman.svg"
-        },
-        {
-          "id": 16,
-          "name": "MySQL / PostgreSQL",
-          "percentage": 70,
-          "icon": "/icons/sql.svg"
-        },
-        {
-          "id": 17,
-          "name": "Figma",
-          "percentage": 65,
-          "icon": "/icons/figma.svg"
-        },
-        {
-          "id": 18,
-          "name": "Docker",
-          "percentage": 20,
-          "icon": "/icons/docker.svg"
-        },
-        {
-          "id": 19,
-          "name": "n8n",
-          "percentage": 30,
-          "icon": "/icons/n8n.svg"
-        }
-      ]
-    }
-  ],
-
-  "soft": [
-    {
-      "id": 101,
-      "name": "Teamwork",
-      "icon": "/icons/team.svg"
-    },
-    {
-      "id": 102,
-      "name": "Problem Solving",
-      "icon": "/icons/problem-solving.svg"
-    },
-    {
-      "id": 103,
-      "name": "Responsibility",
-      "icon": "/icons/responsibility.svg"
-    },
-    {
-      "id": 104,
-      "name": "Adaptability",
-      "icon": "/icons/adaptability.svg"
-    },
-    {
-      "id": 105,
-      "name": "Time Management",
-      "icon": "/icons/time.svg"
-    },
-    {
-      "id": 106,
-      "name": "Critical Thinking",
-      "icon": "/icons/critical.svg"
-    }
+        "key": "programming",
+        "title": "Programming",
+        "description": "Languages and core computer science fundamentals",
+        "skills": [
+          {
+            "id": 1,
+            "name": "Java",
+            "percentage": 50,
+            "icon": "/icons/java.svg"
+          },
+          {
+            "id": 2,
+            "name": "Python",
+            "percentage": 70,
+            "icon": "/icons/python.svg"
+          },
+          {
+            "id": 3,
+            "name": "C",
+            "percentage": 55,
+            "icon": "/icons/c.svg"
+          },
+          {
+            "id": 4,
+            "name": "C++",
+            "percentage": 60,
+            "icon": "/icons/cpp.svg"
+          },
+          {
+            "id": 5,
+            "name": "Kotlin",
+            "percentage": 70,
+            "icon": "/icons/kotlin.svg"
+          }
+        ]
+      },
+      {
+        "key": "web",
+        "title": "Web Development",
+        "description": "Frontend and modern web application development",
+        "skills": [
+          {
+            "id": 5,
+            "name": "HTML5",
+            "percentage": 70,
+            "icon": "/icons/html.svg"
+          },
+          {
+            "id": 6,
+            "name": "CSS",
+            "percentage": 70,
+            "icon": "/icons/css.svg"
+          },
+          {
+            "id": 7,
+            "name": "JavaScript",
+            "percentage": 60,
+            "icon": "/icons/javascript.svg"
+          },
+          {
+            "id": 8,
+            "name": "Vue.js",
+            "percentage": 70,
+            "icon": "/icons/vue.svg"
+          },
+          {
+            "id": 9,
+            "name": "Next.js",
+            "percentage": 50,
+            "icon": "/icons/nextjs.svg"
+          },
+          {
+            "id": 10,
+            "name": "RESTful API",
+            "percentage": 60,
+            "icon": "/icons/api.svg"
+          }
+        ]
+      },
+      {
+        "key": "ai-ml",
+        "title": "AI & Machine Learning",
+        "description": "Basic data processing and machine learning foundations",
+        "skills": [
+          {
+            "id": 11,
+            "name": "Python (Data / ML)",
+            "percentage": 60,
+            "icon": "/icons/python.svg"
+          },
+          {
+            "id": 12,
+            "name": "ollama",
+            "percentage": 30,
+            "icon": "/icons/ollama.svg"
+          }
+        ]
+      },
+      {
+        "key": "tools",
+        "title": "Tools & Technologies",
+        "description": "Tools and technologies used in real-world development",
+        "skills": [
+          {
+            "id": 13,
+            "name": "GitHub",
+            "percentage": 55,
+            "icon": "/icons/github.svg"
+          },
+          {
+            "id": 14,
+            "name": "VS Code",
+            "percentage": 80,
+            "icon": "/icons/vscode.svg"
+          },
+          {
+            "id": 15,
+            "name": "Postman",
+            "percentage": 70,
+            "icon": "/icons/postman.svg"
+          },
+          {
+            "id": 16,
+            "name": "MySQL / PostgreSQL",
+            "percentage": 70,
+            "icon": "/icons/sql.svg"
+          },
+          {
+            "id": 17,
+            "name": "Figma",
+            "percentage": 65,
+            "icon": "/icons/figma.svg"
+          },
+          {
+            "id": 18,
+            "name": "Docker",
+            "percentage": 20,
+            "icon": "/icons/docker.svg"
+          },
+          {
+            "id": 19,
+            "name": "n8n",
+            "percentage": 30,
+            "icon": "/icons/n8n.svg"
+          }
+        ]
+      }
+    ],
+    "soft": [
+      {
+        "id": 101,
+        "name": "Teamwork",
+        "icon": "/icons/team.svg"
+      },
+      {
+        "id": 102,
+        "name": "Problem Solving",
+        "icon": "/icons/problem-solving.svg"
+      },
+      {
+        "id": 103,
+        "name": "Responsibility",
+        "icon": "/icons/responsibility.svg"
+      },
+      {
+        "id": 104,
+        "name": "Adaptability",
+        "icon": "/icons/adaptability.svg"
+      },
+      {
+        "id": 105,
+        "name": "Time Management",
+        "icon": "/icons/time.svg"
+      },
+      {
+        "id": 106,
+        "name": "Critical Thinking",
+        "icon": "/icons/critical.svg"
+      }
     ]
   },
   "projects": [
     {
-      "title": "Portfolio Website",
+      "title": "My Portfolio Website",
       "description": "Personal portfolio built with Vue 3",
-      "tech": ["Vue", "CSS", "JavaScript"],
-      "cover": "/img/projects/portfolio.png",
-      "demo": "https://your-demo-link.com",
-      "github": "https://github.com/you/portfolio",
-      "date": "2024-10-01"
+      "tech": [
+        "Vue",
+        "CSS",
+        "JavaScript"
+      ],
+      "cover": "/projects/portfolio.png",
+      "images": [
+        "/img_project/portfolio/home.png",
+        "/img_project/portfolio/about.png",
+        "/img_project/portfolio/achieve.png",
+        "/img_project/portfolio/skill.png",
+        "/img_project/portfolio/project.png",
+        "/img_project/portfolio/contact.png"
+      ],
+      "github": "https://github.com/PattriraTnsg/Portfolio_Pattrira",
+      "date": "2025"
     },
     {
-      "title": "Todo App",
-      "description": "CRUD Todo App with localStorage",
-      "tech": ["JavaScript", "HTML", "CSS"],
-      "cover": "/img/projects/todo.png",
-      "github": "https://github.com/you/todo-app",
-      "date": "2024-08-15"
+      "title": "Monoshop",
+      "description": "Developed a full-stack e-commerce web application",
+      "tech": [
+        "Vue",
+        "PostgreSQL",
+        "RESTful API",
+        "Node.js"
+      ],
+      "cover": "/projects/Monoshop.png",
+      "images": [
+        "/img_project/monoshop/homepage.png",
+        "/img_project/monoshop/login.png",
+        "/img_project/monoshop/regist.png",
+        "/img_project/monoshop/editprofile.png",
+        "/img_project/monoshop/productpage.png",
+        "/img_project/monoshop/detailproduct.png",
+        "/img_project/monoshop/detailorder.png",
+        "/img_project/monoshop/adminorder.png"
+      ],
+      "demo": "https://monoshopweb.vercel.app/",
+      "github": "https://github.com/PattriraTnsg/MonoShopWeb",
+      "date": "2025-08-15"
+    },
+    {
+      "title": "Fishing Game — C++  Console Game",
+      "description": "console-based fishing game with core gameplay mechanics",
+      "tech": [
+        "C++",
+        "OOP"
+      ],
+      "cover": "/img_project/fishing/start.png",
+      "images": [
+        "/img_project/fishing/start.png",
+        "/img_project/fishing/fish.png",
+        "/img_project/fishing/market.png",
+        "/img_project/fishing/stats.png",
+        "/img_project/fishing/inventory.png"
+      ],
+      "github": "https://github.com/PattriraTnsg/Fishing-Game-",
+      "date": "2024"
+    },
+    {
+      "title": "Typing Game",
+      "description": "Developed a bilingual typing game (Thai/English) ",
+      "tech": [
+        "Java"
+      ],
+      "cover": "/projects/typingGame.png",
+      "images": [
+        "/img_project/typingGame/mainpage.png",
+        "/img_project/typingGame/selectLanguage.png",
+        "/img_project/typingGame/playing.png",
+        "/img_project/typingGame/practice.png",
+        "/img_project/typingGame/gameOver.png"
+      ],
+      "github": "https://github.com/PattriraTnsg/TypingGame",
+      "date": "2024"
+    },
+    {
+      "title": "Restaurant Ordering Management System",
+      "description": "desktop application for a Japanese ramen restaurant",
+      "tech": [
+        "Python",
+        "Tkinter"
+      ],
+      "cover": "/projects/Japanfood.png",
+      "images": [
+        "/img_project/ramen/Mainpage.png",
+        "/img_project/ramen/addmenu.png",
+        "/img_project/ramen/paymentpage.png"
+      ],
+      "github": "https://github.com/PattriraTnsg/Japanese-ramen-restaurant",
+      "date": "2023"
+    },
+    {
+      "title": "Figma Workshop",
+      "description": "UI/UX design for a university course registration request system (Registrar-20)",
+      "tech": [
+        "Figma"
+      ],
+      "cover": "/projects/Register20.png",
+      "images": [
+        "/img_project/figma/homeku20.png",
+        "/img_project/figma/detail.png",
+        "/img_project/figma/example.png",
+        "/img_project/figma/sentform.png",
+        "/img_project/figma/viewform.png"
+      ],
+      "date": "2025"
     }
   ]
 }
-
