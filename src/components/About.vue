@@ -476,7 +476,7 @@ export default {
 }
   
 /* Landscape Mode สำหรับ Mobile */
-@media (max-height: 600px) and (orientation: landscape) {
+/*@media (max-height: 600px) and (orientation: landscape) {
   .About-section {
     padding: 2rem 5vw;
     min-height: 100vh;
@@ -503,6 +503,58 @@ export default {
   .quote h2 {
     margin-bottom: 1rem;
   }
+}*/
+
+/* Mobile Landscape Mode */
+@media (max-height: 600px) and (orientation: landscape) {
+
+  .About-section {
+    flex-direction: row;          /* ให้กลับไปเรียงข้าง */
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 4vw;
+    gap: 2rem;
+    min-height: auto;             /* ห้ามใช้ 100vh ใน landscape */
+  }
+
+  .student-card {
+    padding: 1.25rem;
+  }
+
+  .profile_img {
+    width: 6.5rem;
+    height: 6.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .title {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .student-detail {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .intro-content {
+    padding: 0;
+  }
+
+  .quote {
+    padding: 1rem;
+  }
+
+  .quote h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .quote h4 {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
 }
 
 /* Reduce Motion */
