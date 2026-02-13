@@ -451,17 +451,17 @@ body {
     font-size: 1.5rem;
   }
 }*/
-/* ============================= */
-/* Mobile Responsive Improved */
-/* ============================= */
 
+/* Mobile Responsive Improved */
 @media (max-width: 768px) {
 
   .navbar {
+    top: 0;
+    left: 0;              /* เพิ่ม */
+    transform: none;      /* เพิ่ม */
+    width: 100%;          /* เปลี่ยน */
+    border-radius: 0;     /* เปลี่ยน */
     padding: 8px 16px;
-    top: 0; /* ชิดบนแบบ modern */
-    width: calc(100% - 20px);
-    border-radius: 0 0 16px 16px;
     padding-top: calc(8px + env(safe-area-inset-top));
   }
 
