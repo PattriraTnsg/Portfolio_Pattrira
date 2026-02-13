@@ -392,7 +392,8 @@ body {
 }
 
 /* Mobile Responsive */
-@media (max-width: 768px) {
+
+/*@media (max-width: 768px) {
   .navbar {
     padding: 8px 16px;
     top: 10px;
@@ -448,6 +449,106 @@ body {
 
   .logo-dot {
     font-size: 1.5rem;
+  }
+}*/
+/* ============================= */
+/* Mobile Responsive Improved */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 8px 16px;
+    top: 0; /* ชิดบนแบบ modern */
+    width: calc(100% - 20px);
+    border-radius: 0 0 16px 16px;
+    padding-top: calc(8px + env(safe-area-inset-top));
+  }
+
+  .navbar.shrink {
+    padding: 8px 16px;
+  }
+
+  .nav-item {
+    margin: 4px 0;
+  }
+
+  .nav-link {
+    font-size: 0.95rem;
+    padding: 10px 12px;
+    min-height: 44px; /* รองรับ thumb tap */
+  }
+
+  .nav-underline {
+    display: none;
+  }
+
+  .contact-btn {
+    margin-left: 0;
+    margin-top: 8px;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Floating Collapse Menu */
+  .navbar-collapse {
+    margin-top: 12px;
+    padding: 16px;
+    max-height: 75vh;          /* กันล้นจอ */
+    overflow-y: auto;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(18px);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  .navbar.light-text .navbar-collapse {
+    background: rgba(0, 0, 0, 0.25);
+  }
+
+}
+
+/* Small Phones */
+@media (max-width: 576px) {
+
+  .navbar {
+    border-radius: 0 0 14px 14px;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .logo-dot {
+    font-size: 1.5rem;
+  }
+
+}
+
+/* Disable Hover Effects on Touch Devices */
+@media (hover: none) {
+
+  .nav-link:hover,
+  .contact-btn:hover,
+  .logo:hover {
+    transform: none;
+  }
+
+}
+
+/* Smooth Slide Animation for Collapse */
+.navbar-collapse.show {
+  animation: slideDown 0.25s ease forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 </style>
