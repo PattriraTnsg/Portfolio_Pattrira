@@ -456,12 +456,10 @@ body {
 @media (max-width: 768px) {
 
   .navbar {
+    padding: 8px 5vw; /* ใช้ padding เดียวกับ Home */
     top: 0;
-    left: 0;              /* เพิ่ม */
-    transform: none;      /* เพิ่ม */
-    width: 100%;          /* เปลี่ยน */
-    border-radius: 0;     /* เปลี่ยน */
-    padding: 8px 16px;
+    width: 100%; /* เปลี่ยนจาก calc(100% - 20px) */
+    border-radius: 0 0 16px 16px;
     padding-top: calc(8px + env(safe-area-inset-top));
   }
 
