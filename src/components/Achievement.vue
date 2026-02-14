@@ -208,13 +208,14 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5vw;
+  padding: 100px 5vw 40px; /* 💡 เพิ่ม padding บนหลบ Navbar */
 }
 
 .cert-title {
   font-size: 3rem;
   margin-bottom: 2rem;
   color: #333;
+  text-align: center;
 }
 
 /* Loading */
@@ -227,10 +228,11 @@ export default {
 /* Filters */
 .filters {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.75rem;
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 2rem;
+  width: 100%;
 }
 
 .chip {
@@ -270,6 +272,8 @@ export default {
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
@@ -290,17 +294,6 @@ export default {
   object-fit: cover;
 }
 
-.ribbon {
-  position: absolute;
-  top: 10px;
-  right: -30px;
-  background: #4CAF50;
-  color: white;
-  padding: 5px 40px;
-  transform: rotate(45deg);
-  font-size: 0.8rem;
-}
-
 .multi-badge {
   position: absolute;
   bottom: 10px;
@@ -315,17 +308,22 @@ export default {
 /* Meta */
 .meta {
   padding: 1.5rem;
+  flex-grow: 1; /* 💡 ให้การ์ดมีความสูงเท่ากันเมื่อเนื้อหาไม่เท่ากัน */
+  display: flex;
+  flex-direction: column;
 }
 
 .ctitle {
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
   color: #333;
+  line-height: 1.4;
 }
 
 .issuer {
   color: #666;
   margin-bottom: 1rem;
+  font-size: 0.95rem;
 }
 
 .cert-tags {
@@ -341,11 +339,13 @@ export default {
   border-radius: 15px;
   font-size: 0.85rem;
   color: #333;
+  white-space: nowrap;
 }
 
 .date {
   color: #999;
   font-size: 0.9rem;
+  margin-top: auto;
 }
 
 /* Lightbox */
@@ -366,25 +366,30 @@ export default {
 .lightbox-inner {
   background: white;
   border-radius: 12px;
-  max-width: 1200px;
+  max-width: 1000px; /* 💡 ปรับขนาดให้พอดีขึ้น */
   width: 100%;
   max-height: 90vh;
   overflow-y: auto;
   padding: 2rem;
   display: grid;
-  grid-template-columns: minmax(320px, 60vw) minmax(280px, 420px);
-  gap: 1.3rem;
+  grid-template-columns: 1.5fr 1fr; /* 💡 ปรับสัดส่วนรูปและข้อความ */
+  gap: 2rem;
+  position: relative; /* 💡 สำหรับวางปุ่ม close */
 }
 
 .viewer {
   position: relative;
-  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .viewer img {
   width: 100%;
-  height: auto;
+  max-height: 60vh; /* 💡 ไม่ให้รูปสูงเกินไปจนล้นจอ */
+  object-fit: contain;
   border-radius: 8px;
+  background: #f5f5f5; /* 💡 เผื่อรูปเป็นแนวตั้ง จะได้ไม่ดูโล่ง */
 }
 
 .nav {
@@ -398,6 +403,7 @@ export default {
   cursor: pointer;
   font-size: 1.5rem;
   border-radius: 4px;
+  transition: background 0.3s;
 }
 
 .nav:hover {
@@ -417,6 +423,20 @@ export default {
   gap: 0.5rem;
   margin-top: 1rem;
   overflow-x: auto;
+  padding-bottom: 0.5rem; /* 💡 เผื่อพื้นที่ให้ Scrollbar */
+}
+
+/* 💡 ซ่อน Scrollbar ของ Thumbnail แต่ยังเลื่อนได้ */
+.thumbs::-webkit-scrollbar {
+  height: 6px;
+}
+.thumbs::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+.thumbs::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
 }
 
 .thumb-btn {
@@ -425,6 +445,7 @@ export default {
   cursor: pointer;
   border-radius: 4px;
   overflow: hidden;
+  flex-shrink: 0; /* 💡 ไม่ให้ Thumbnail ถูกบีบ */
 }
 
 .thumb-btn.active {
@@ -432,20 +453,17 @@ export default {
 }
 
 .thumb-btn img {
-  width: 120px;
-  height: 90px;
+  width: 80px; /* 💡 ลดขนาด Thumbnail ลงนิดนึง */
+  height: 60px;
   object-fit: cover;
   display: block;
 } 
 
 .lb-info {
-  position: relative;
-  padding: 2rem 1.5rem 3rem;
-  margin-top: 50px;
-  margin-right: 50px;
   display: flex;
   flex-direction: column;
-  gap: .75rem;
+  gap: 0.75rem;
+  padding-top: 1rem; /* 💡 จัดระยะห่างด้านบน */
 }
 
 .lb-info h3 {
@@ -453,35 +471,34 @@ export default {
   margin-bottom: 0.5rem;
   font-weight: 600;
   line-height: 1.4;
-
+  color: #222;
 }
 
 .lb-info .issuer {
   color: #666;
   margin-bottom: 1rem;
+  font-size: 1rem;
 }
 
 .lb-info .desc {
-  color: #333;
+  color: #444;
   line-height: 1.6;
   margin-bottom: 1.5rem;
-  
 }
 
 .close-btn {
-  position: absolute;
-  right: 14px;
-  bottom: 14px;
-  z-index: 10;
+  align-self: flex-start; /* 💡 ให้ปุ่มจัดตัวเองอยู่ด้านบน/ซ้ายตาม flow */
+  margin-top: auto; /* 💡 ดันปุ่มลงไปล่างสุดของพื้นที่ข้อความ */
   background: #333;
   color: white;
   border: none;
-  padding: 0.6rem 2rem;
+  padding: 0.75rem 2rem;
   border-radius: 25px;
   cursor: pointer;
   font-family: 'Oswald', monospace;
   font-size: 1rem;
-  transition: filter .2s ease, transform .15s ease;
+  transition: background 0.3s;
+  width: fit-content;
 }
 
 .close-btn:hover {
@@ -499,5 +516,78 @@ export default {
 .reveal.in-view {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* =========================================
+   📱 Responsive Design สำหรับมือถือและแท็บเล็ต
+   ========================================= */
+
+@media (max-width: 1024px) {
+  .lightbox-inner {
+    grid-template-columns: 1fr 1fr; /* 💡 แบ่งครึ่งจอซ้ายขวาบนแท็บเล็ต */
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .cert-title {
+    font-size: 2.5rem;
+  }
+
+  .lightbox {
+    padding: 1rem; /* 💡 ลดขอบดำรอบๆ pop-up บนมือถือ */
+  }
+
+  .lightbox-inner {
+    grid-template-columns: 1fr; /* 💡 เปลี่ยนการเรียงเป็นแนวตั้ง (รูปอยู่บน ข้อความอยู่ล่าง) */
+    gap: 1rem;
+    padding: 1.25rem;
+    max-height: 95vh;
+  }
+
+  .viewer {
+    margin-bottom: 0;
+  }
+
+  .viewer img {
+    max-height: 40vh; /* 💡 ลดความสูงรูปลง เพื่อให้มีที่เหลือให้ข้อความ */
+  }
+
+  .lb-info {
+    padding-top: 0;
+  }
+
+  .lb-info h3 {
+    font-size: 1.4rem;
+  }
+
+  .close-btn {
+    width: 100%; /* 💡 ปุ่ม Close ขยายเต็มความกว้างบนมือถือเพื่อให้กดง่าย */
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .Achievements-section {
+    padding: 90px 4vw 30px;
+  }
+
+  .cert-title {
+    font-size: 2rem;
+  }
+
+  .chip {
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr; /* 💡 การ์ดเรียงแถวละ 1 ใบแน่นอนบนจอมือถือเล็ก */
+  }
+
+  .nav {
+    padding: 0.5rem; /* 💡 เล็กลงนิดนึงจะได้ไม่บังรูปเยอะ */
+    font-size: 1.2rem;
+  }
 }
 </style>

@@ -136,7 +136,7 @@ export default {
       profile,
       SciLogo,
       BrudaLogo,
-      titleText: "Pattrira Tanongsaksrikung",
+      titleText: "Pattrira Tanongsaksrikun",
     };
   },
   methods: {
@@ -633,71 +633,49 @@ export default {
   }
 }
 
-/* Tablet Portrait*/
+/* Tablet Portrait & Mobile */
 @media (max-width: 768px) {
   .home-section {
     flex-direction: column;
-    justify-content: center;
+    /* เปลี่ยนจาก center เป็น flex-start เพื่อให้เนื้อหาไหลจากบนลงล่าง ไม่ถูกบีบตรงกลาง */
+    justify-content: flex-start; 
     min-height: 100svh;
-    padding: 100px 5vw 60px;
+    height: auto; /* อนุญาตให้กล่องขยายความสูงได้ถ้าเนื้อหาเยอะเกินจอ */
+    padding: 120px 5vw 40px; /* เพิ่ม padding-top หลบ Navbar และมีพื้นที่หายใจ */
     text-align: center;
-    gap: 2rem;
-  }
-
-  .circle-1 {
-    width: 200px;
-    height: 200px;
-  }
-
-  .circle-2 {
-    width: 150px;
-    height: 150px;
-  }
-
-  .circle-3 {
-    width: 100px;
-    height: 100px;
+    gap: 1.5rem;
   }
 
   .home-content {
     max-width: 100%;
     animation: fadeInUp 0.8s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* จัดให้อยู่กึ่งกลาง */
   }
 
-  .greeting {
-    justify-content: center;
-  }
-
-  .title {
-    font-size: 2rem;
-    line-height: 1.3;
-  }
-
-  .subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-  }
+  /* ... (โค้ด .circle ต่างๆ เอาไว้เหมือนเดิม) ... */
 
   .btn-group {
     flex-direction: row;
     gap: 1rem;
     justify-content: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem; /* ลด margin ลงนิดหน่อย */
+    width: 100%;
   }
 
-  .start-btn {
-    padding: 0.75rem 1.5rem;
-    font-size: 0.95rem;
+  /* 💡 จุดสำคัญ: เปลี่ยน Scroll Indicator ไม่ให้ลอยทับเนื้อหา */
+  .scroll-indicator {
+    position: relative; /* ยกเลิก absolute บนมือถือ */
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin-top: 1rem; /* เพิ่มระยะห่างจาก social links */
   }
 
-  .social-links {
-    justify-content: center;
-    gap: 1rem;
-  }
-
-  .social-icon {
-    width: 40px;
-    height: 40px;
+  /* แก้ไข effect hover ให้สอดคล้องกับ relative */
+  .scroll-indicator:hover {
+    transform: translateY(-5px);
   }
 
   .profile-section {
@@ -706,12 +684,8 @@ export default {
   }
 
   .profile-img-wrapper {
-    width: 250px;
-    height: 250px;
-  }
-
-  .profile-img:hover {
-    transform: scale(1.02);
+    width: 220px; /* ลดขนาดรูปลงเล็กน้อยให้เหมาะกับจอมือถือ */
+    height: 220px;
   }
 
   /* Info Cards - ซ่อนในหน้าจอ tablet */
@@ -719,84 +693,40 @@ export default {
   .info-card-nobg {
     display: none;
   }
-
-  .scroll-indicator {
-    bottom: 2rem;
-  }
 }
 
 /* Mobile Large - 480px */
 @media (max-width: 480px) {
   .home-section {
-    padding: 80px 5vw 40px;
-  }
-
-  .greeting {
-    font-size: 1.1rem;
-    gap: 0.3rem;
-  }
-
-  .wave {
-    font-size: 1.5rem;
+    padding: 100px 5vw 40px;
   }
 
   .title {
-    font-size: 1.6rem;
-    margin-bottom: 0.75rem;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
   }
 
   .subtitle {
     font-size: 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
   }
 
   .btn-group {
-    flex-direction: column;
+    flex-direction: column; /* ให้ปุ่มเรียงแนวตั้งบนจอมือถือเล็ก */
     gap: 0.75rem;
-    width: 100%;
   }
 
   .start-btn {
     width: 100%;
-    max-width: 100%;
-    padding: 0.875rem 1.5rem;
-    font-size: 0.9rem;
-  }
-
-  .social-links {
-    gap: 0.75rem;
-  }
-
-  .social-icon {
-    width: 38px;
-    height: 38px;
-  }
-
-  .social-icon svg {
-    width: 20px;
-    height: 20px;
   }
 
   .profile-img-wrapper {
-    width: 200px;
-    height: 200px;
-  }
-
-  .profile-ring {
-    border-width: 1.5px;
+    width: 180px; /* ลดขนาดรูปลงอีกสำหรับจอมือถือเล็ก */
+    height: 180px;
   }
 
   .scroll-indicator {
-    bottom: 1.5rem;
-  }
-
-  .scroll-indicator p {
-    font-size: 0.75rem;
-  }
-
-  .mouse {
-    width: 25px;
-    height: 45px;
+    margin-top: 0.5rem;
   }
 }
 
@@ -824,6 +754,7 @@ export default {
     height: 180px;
   }
 }
+
 
 /* Landscape Mode สำหรับ Mobile */
 @media (max-height: 600px) and (orientation: landscape) {

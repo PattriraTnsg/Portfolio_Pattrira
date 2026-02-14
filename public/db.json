@@ -329,10 +329,13 @@
         "/img_project/monoshop/homepage.png",
         "/img_project/monoshop/login.png",
         "/img_project/monoshop/regist.png",
+        "/img_project/monoshop/profile.png",
         "/img_project/monoshop/editprofile.png",
         "/img_project/monoshop/productpage.png",
+        "/img_project/monoshop/SearchProduct.png",
         "/img_project/monoshop/detailproduct.png",
         "/img_project/monoshop/detailorder.png",
+        "/img_project/monoshop/listOrder.png",
         "/img_project/monoshop/adminorder.png"
       ],
       "demo": "https://monoshopweb.vercel.app/",
@@ -404,6 +407,7 @@
         "/img_project/figma/sentform.png",
         "/img_project/figma/viewform.png"
       ],
+      "demo": "https://www.figma.com/proto/demSivVP7KKpY5v6w66OPD/6630200420_-20-?node-id=19-63&starting-point-node-id=1%3A3&t=LNbfoFP24n707nMF-1",
       "date": "2025"
     }
   ]

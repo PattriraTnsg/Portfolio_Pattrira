@@ -89,7 +89,7 @@ export default {
   border-radius: 20px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   max-width: 700px;
-  width: 150%;
+  width: 100%; /* 💡 แก้จาก 150% เป็น 100% เพื่อไม่ให้ทะลุจอ */
   text-align: center;
   transition: transform 0.3s ease-in-out;
 }
@@ -112,9 +112,8 @@ export default {
 .copy-btn:hover {
   background: #444;
   color: #eaeaea;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3)
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
 }
-
 
 .contact-info {
   text-align: left;
@@ -131,61 +130,23 @@ export default {
   width: 200px;
   height: 200px;
   object-fit: cover;
-  /* ทำให้ภาพไม่บิด */
   display: block;
-  /* ป้องกัน spacing แปลก ๆ */
   border-radius: 50%;
-  /* ทำให้เป็นวงกลมเนียน */
   margin-right: 3rem;
   transition: box-shadow 0.3s ease-in-out;
+  flex-shrink: 0; /* 💡 ป้องกันรูปถูกบีบให้เบี้ยว */
 }
 
 .contact_img:hover {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .contact-section{
-    min-height: 100svh;
-  }
-  
-  .title {
-    font-size: 2.5rem;
-  }
-
-  .contact-card {
-    padding: 2rem;
-    max-width: 90%;
-  }
-
-  .contact-info h4 {
-    font-size: 1rem;
-    padding: 2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .title {
-    font-size: 2rem;
-  }
-
-  .contact-card {
-    padding: 1.5rem;
-  }
-
-  .contact-info h4 {
-    font-size: 0.9rem;
-  }
-}
-
-
 /* Social Links */
 .social-links {
   display: flex;
   gap: 1rem;
   animation: fadeIn 1s ease-out 1s backwards;
-  padding: 1rem;
+  padding: 1rem 0; /* 💡 ปรับ padding ซ้ายขวาออก */
 }
 
 .social-icon {
@@ -205,5 +166,77 @@ export default {
   background: #f8e0ad;
   color: #444a56;
   transform: translateY(-5px);
+}
+
+/* =========================================
+   📱 Responsive Design สำหรับมือถือและแท็บเล็ต
+   ========================================= */
+
+/* แท็บเล็ตและมือถือแนวนอน */
+@media (max-width: 768px) {
+  .contact-section {
+    min-height: 100svh;
+    padding: 100px 5vw 40px; /* 💡 เผื่อพื้นที่ด้านบนให้ Navbar */
+  }
+  
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .contact-card {
+    padding: 2rem;
+    max-width: 90%;
+    flex-direction: column; /* 💡 จับรูปและข้อความเรียงบน-ล่าง */
+  }
+
+  .contact_img {
+    margin-right: 0; /* 💡 เอา margin ด้านขวาออก */
+    margin-bottom: 1.5rem; /* 💡 ดันข้อความลงไปด้านล่างแทน */
+    width: 160px;
+    height: 160px;
+  }
+
+  .contact-info {
+    text-align: center; /* 💡 จัดข้อความให้อยู่ตรงกลาง */
+    width: 100%;
+  }
+
+  .contact-info h4 {
+    font-size: 1.1rem;
+    padding: 0; /* 💡 เอา padding 2rem ของเก่าออกเพื่อไม่ให้เบียดเกินไป */
+  }
+
+  .social-links {
+    justify-content: center; /* 💡 จัดไอคอนให้อยู่ตรงกลางการ์ด */
+  }
+}
+
+/* มือถือแนวตั้งจอเล็ก */
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .contact-card {
+    padding: 1.5rem;
+    width: 95%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .contact_img {
+    width: 130px;
+    height: 130px;
+  }
+
+  .contact-info h4 {
+    font-size: 1rem;
+    word-break: break-word; /* 💡 ป้องกันกรณีอีเมลยาวจนทะลุกล่อง */
+  }
+
+  .social-icon {
+    width: 40px;
+    height: 40px;
+  }
 }
 </style>

@@ -293,6 +293,9 @@ export default {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border: 2px solid transparent;
     position: relative;
+    display: flex;          
+    flex-direction: column;
+    height: 100%;
 }
 
 .card::before {
@@ -360,6 +363,9 @@ export default {
 
 .card-body {
     padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .card-body h3 {
@@ -374,6 +380,7 @@ export default {
     line-height: 1.6;
     color: #ddd;
     margin-bottom: 1rem;
+    
 }
 
 .tags {
@@ -400,6 +407,7 @@ export default {
 }
 
 /* Lightbox */
+/* --- Lightbox Container --- */
 .lightbox {
     position: fixed;
     inset: 0;
@@ -414,50 +422,34 @@ export default {
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
+/* --- Lightbox Inner Box --- */
 .lightbox-inner {
     background: #1a1a1a; 
     border-radius: 24px;
-    max-width: 2000px; 
-    width: 90%;
+    max-width: 1200px; /* 💡 ปรับให้พอดีขึ้น ไม่กว้างเกินไป */
+    width: 100%;
     max-height: 90vh; 
-    overflow-y: auto; 
     position: relative;
-    
     border: 2px solid rgba(242, 204, 123, 0.3);
     display: flex;
     flex-direction: column;
+    overflow: hidden; /* 💡 ป้องกันเนื้อหาทะลุกรอบ */
 }
 
-@keyframes slideUp {
-    from {
-        transform: translateY(50px);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
+/* --- Layout ฝั่งซ้าย (รูป) ขวา (ข้อมูล) สำหรับ Desktop --- */
 .lightbox-content {
     display: grid;
-    grid-template-columns: 1.8fr 1.2fr; 
-    height: 100%;
-    overflow: hidden;
+    grid-template-columns: 1.5fr 1fr; /* 💡 ปรับสัดส่วนให้เนื้อหาอ่านง่ายขึ้น */
+    height: 100%; /* 💡 ให้เต็มความสูงของ lightbox-inner */
 }
 
+/* --- ฝั่งซ้าย: รูปภาพ --- */
 .lightbox-media-column {
-    background: #000;
+    background: #141414;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -483,6 +475,7 @@ export default {
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
+/* --- ปุ่มเลื่อนรูปภาพ --- */
 .nav {
     position: absolute;
     top: 50%;
@@ -501,22 +494,30 @@ export default {
     z-index: 10;
 }
 .nav:hover {
-    background: #333;
-    color: rgb(242, 204, 123);
+    background: #f2cc7b;
+    color: #1a1a1a;
 }
 .nav.prev { left: 20px; }
 .nav.next { right: 20px; }
 
-/* Thumbnails ด้านล่าง */
+/* --- รูปเล็ก (Thumbnails) ด้านล่าง --- */
 .thumbnails-container {
     padding: 1rem;
     background: rgba(255, 255, 255, 0.02);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    overflow-x: auto; /* 💡 เผื่อรูปเยอะจะได้เลื่อนซ้ายขวาได้ */
 }
+
+/* 💡 ซ่อน Scrollbar ของ Thumbnail แต่ยังเลื่อนได้ */
+.thumbnails-container::-webkit-scrollbar { height: 6px; }
+.thumbnails-container::-webkit-scrollbar-track { background: transparent; }
+.thumbnails-container::-webkit-scrollbar-thumb { background: rgba(242, 204, 123, 0.3); border-radius: 4px; }
+
 .thumbnails {
     display: flex;
     justify-content: center;
     gap: 10px;
+    min-width: max-content; /* 💡 ป้องกัน thumbnail โดนบีบ */
 }
 .thumbnails img {
     width: 60px;
@@ -527,6 +528,7 @@ export default {
     cursor: pointer;
     border: 2px solid transparent;
     transition: all 0.2s;
+    flex-shrink: 0;
 }
 .thumbnails img.active {
     opacity: 1;
@@ -539,16 +541,24 @@ export default {
     padding: 3rem 2.5rem;
     display: flex;
     flex-direction: column;
-    overflow-y: auto; /* ให้ scroll ได้เฉพาะฝั่งข้อมูล */
+    overflow-y: auto; /* 💡 ให้ scroll ได้เฉพาะฝั่งข้อมูล */
     background: #1a1a1a;
     position: relative;
+    max-height: 90vh; /* 💡 ป้องกันยาวเกินจอ */
 }
+
+/* Scrollbar สำหรับฝั่งข้อมูล */
+.lightbox-info-column::-webkit-scrollbar { width: 8px; }
+.lightbox-info-column::-webkit-scrollbar-track { background: #1a1a1a; }
+.lightbox-info-column::-webkit-scrollbar-thumb { background: rgba(242, 204, 123, 0.5); border-radius: 4px; }
+.lightbox-info-column::-webkit-scrollbar-thumb:hover { background: #f2cc7b; }
 
 .info-header h2 {
     font-size: 2.2rem;
     color: #f2cc7b;
     margin-bottom: 0.5rem;
     line-height: 1.2;
+    padding-right: 2rem; /* 💡 เผื่อที่ให้ปุ่ม Close */
 }
 
 .subtitle {
@@ -566,7 +576,7 @@ export default {
 }
 
 .lightbox-info-column .tags {
-    margin-bottom: auto; 
+    margin-bottom: auto; /* ดันปุ่ม action ลงไปล่างสุด (ถ้ามีพื้นที่เหลือ) */
 }
 
 .actions {
@@ -591,6 +601,8 @@ export default {
     font-size: 1rem;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border: 2px solid #f2cc7b;
+    flex: 1; /* 💡 ให้ปุ่มกว้างเท่าๆ กัน */
+    justify-content: center;
 }
 
 .btn:hover {
@@ -602,7 +614,6 @@ export default {
 .btn.ghost {
     background: transparent;
     color: #f2cc7b;
-    border: 2px solid #f2cc7b;
 }
 
 .btn.ghost:hover {
@@ -610,59 +621,127 @@ export default {
     transform: translateY(-2px);
 }
 
-
-/* ปรับตำแหน่งปุ่มปิด (Close) */
+/* --- ปุ่มปิด (Close) --- */
 .close {
     position: absolute;
     top: 20px;
     right: 20px;
     z-index: 100;
-    background: transparent;
+    background: rgba(26, 26, 26, 0.8); /* 💡 เพิ่มพื้นหลังให้เห็นชัดขึ้น */
     border: none;
-    color: #666;
+    color: #f2cc7b;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
 }
 .close:hover {
-    color: #f2cc7b;
-    background: transparent;
+    background: #f2cc7b;
+    color: #1a1a1a;
     transform: rotate(90deg);
 }
 
-/* --- Responsive (มือถือให้กลับมาเรียงตั้ง) --- */
-@media (max-width: 900px) {
-    .lightbox-inner {
-        height: auto;
-        max-height: 90vh;
-        overflow-y: auto;
-    }
+/* =========================================
+   📱 Responsive Design สำหรับมือถือและแท็บเล็ต
+   ========================================= */
+
+@media (max-width: 1024px) {
     .lightbox-content {
-        grid-template-columns: 1fr; /* กลับมาเป็นคอลัมน์เดียว */
-        height: auto;
-        overflow: visible;
+        grid-template-columns: 1fr 1fr;
     }
+}
+
+@media (max-width: 768px) {
+    .lightbox {
+        padding: 1rem;
+        align-items: center; /* 💡 จัดให้อยู่ตรงกลางจอ */
+    }
+    
+    .lightbox-inner {
+        max-height: 90vh; /* 💡 จำกัดความสูงไม่ให้เกิน 90% ของจอ */
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden; /* 💡 ป้องกันไม่ให้เนื้อหาทะลุกรอบ */
+    }
+
+    /* 💡 เปลี่ยนจาก Grid เป็น Flex เรียงแนวตั้ง และให้ Scroll ที่นี่จุดเดียว */
+    .lightbox-content {
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto; 
+        height: 100%;
+        -webkit-overflow-scrolling: touch; /* ให้มือถือเลื่อนได้สมูทขึ้น */
+    }
+
     .lightbox-media-column {
-        height: 300px; /* กำหนดความสูงรูปในมือถือ */
+        height: auto;
+        min-height: 35vh; /* 💡 ให้รูปมีพื้นที่กำลังดี ไม่ใหญ่/เล็กไป */
+        width: 100%;
+        flex-shrink: 0;
+        border-radius: 16px 16px 0 0;
     }
+
+    .main-image-wrapper {
+        padding: 1.5rem 1rem 0.5rem 1rem;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .main-img {
+        max-height: 35vh;
+        width: 100%;
+        object-fit: contain;
+    }
+
+    /* 💡 ย่อปุ่มเลื่อนรูปในมือถือ */
+    .nav { width: 36px; height: 36px; }
+    .nav.prev { left: 10px; }
+    .nav.next { right: 10px; }
+
+    /* 💡 ปรับฝั่งข้อมูลให้ความสูงยืดหยุ่น */
     .lightbox-info-column {
         padding: 1.5rem;
-        overflow: visible;
+        overflow-y: visible; /* 💡 ปิด scroll ซ้ำซ้อน ให้ไป scroll ที่ตัวแม่แทน */
+        height: auto;
     }
-}
 
-/* Scrollbar */
-.lightbox-inner::-webkit-scrollbar {
-    width: 8px;
-}
+    .info-header h2 {
+        font-size: 1.6rem; /* 💡 ปรับขนาดฟอนต์ให้พอดีจอมือถือ */
+        padding-right: 2.5rem; /* เผื่อพื้นที่ให้ปุ่มกากบาทตอนเลื่อนลงมา */
+    }
 
-.lightbox-inner::-webkit-scrollbar-track {
-    background: #1a1a1a;
-}
+    .info-body p {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
 
-.lightbox-inner::-webkit-scrollbar-thumb {
-    background: #f2cc7b;
-    border-radius: 4px;
-}
-
-.lightbox-inner::-webkit-scrollbar-thumb:hover {
-    background: #ffd98f;
+    /* 💡 ให้ปุ่ม Action เรียงแนวตั้งบนมือถือ */
+    .actions {
+        flex-direction: column;
+        gap: 0.8rem;
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+    
+    /* 💡 ปุ่มปิดให้อยู่ตำแหน่งขวาบนของกรอบเสมอ */
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: rgba(0, 0, 0, 0.7);
+        width: 36px;
+        height: 36px;
+        z-index: 100;
+    }
 }
 </style>

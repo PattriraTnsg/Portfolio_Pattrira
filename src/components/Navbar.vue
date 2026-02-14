@@ -166,15 +166,21 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-body {
+html, body {
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
 }
+</style>
 
+<style scoped>
 /* Glassmorphism Navbar Style */
 .navbar {
   position: fixed;
@@ -391,74 +397,13 @@ body {
   text-shadow: 0 0 10px rgba(255, 216, 77, 0.4);
 }
 
-/* Mobile Responsive */
-
-/*@media (max-width: 768px) {
-  .navbar {
-    padding: 8px 16px;
-    top: 10px;
-    width: calc(100% - 20px);
-  }
-
-  .navbar.shrink {
-    padding: 8px 16px;
-  }
-
-  .nav-item {
-    margin: 4px 0;
-  }
-
-  .nav-link {
-    font-size: 0.95rem;
-    padding: 10px 12px;
-    min-height: 44px;
-  }
-
-  .nav-underline {
-    display: none;
-  }
-
-  .contact-btn {
-    margin-left: 0;
-    margin-top: 8px;
-    width: 100%;
-    text-align: center;
-  }
-
-  .navbar-collapse {
-    margin-top: 12px;
-    padding: 12px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(12px);
-    border-radius: 12px;
-  }
-
-  .navbar.light-text .navbar-collapse {
-    background: rgba(0, 0, 0, 0.15);
-  }
-}
-
-@media (max-width: 576px) {
-  .navbar {
-    border-radius: 15px;
-  }
-
-  .logo {
-    font-size: 1.2rem;
-  }
-
-  .logo-dot {
-    font-size: 1.5rem;
-  }
-}*/
-
 /* Mobile Responsive Improved */
 @media (max-width: 768px) {
 
   .navbar {
-    padding: 8px 5vw; /* ใช้ padding เดียวกับ Home */
-    top: 0;
-    width: 100%; /* เปลี่ยนจาก calc(100% - 20px) */
+    padding: 8px 16px;
+    top: 0; /* ชิดบนแบบ modern */
+    width: calc(100% - 20px);
     border-radius: 0 0 16px 16px;
     padding-top: calc(8px + env(safe-area-inset-top));
   }
