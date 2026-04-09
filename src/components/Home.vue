@@ -73,8 +73,8 @@
             />
           </svg>
         </a>
-        <!-- SocialMedia -->
-        <a href="/Resume_Pattrira__Transcript.pdf" class="social-icon">
+        <!-- Resume -->
+        <a href="/Pattrira_Resume_transcript_.pdf" class="social-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
             <path
               d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm1 7h5l-5-5v5zM8 13h8v2H8v-2zm0 5h5v2H8v-2z"

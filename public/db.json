@@ -202,12 +202,6 @@
             "name": "Python (Data / ML)",
             "percentage": 60,
             "icon": "/icons/python.svg"
-          },
-          {
-            "id": 12,
-            "name": "ollama",
-            "percentage": 30,
-            "icon": "/icons/ollama.svg"
           }
         ]
       },
@@ -295,6 +289,41 @@
     ]
   },
   "projects": [
+    {
+      "title": "Finger Control Tetris",
+      "description": "Tetris game controlled by hand gestures",
+      "tech": [
+        "Python",
+        "MediaPipe",
+        "OpenCV",
+        "Gesture Recognition"
+      ],
+      "cover": "/img_project/tetris/tetrisGame.png",
+      "images": [
+        "/img_project/tetris/tetrisGame.png",
+        "/img_project/tetris/tertrisShow.gif"
+      ],
+      "github": "https://github.com/PattriraTnsg/finger-tetris",
+      "date": "2026"
+    },
+    {
+      "title": "Thai Sentiment Analysis",
+      "description": "binary sentiment classification (positive/negative) on Thai restaurant reviews",
+      "tech": [
+        "Python",
+        "Google Colab",
+        "Vue"
+      ],
+      "cover": "/img_project/TH-sentiment/TH-fristpage.png",
+      "images": [
+        "/img_project/TH-sentiment/TH-fristpage.png",
+        "/img_project/TH-sentiment/TH-Chat.png",
+        "/img_project/TH-sentiment/TH-Chat_demo.gif"
+      ],
+      "demo": "https://thai-sentiment-analysis-2class.vercel.app/",
+      "github": "https://github.com/PattriraTnsg/Thai-Sentiment-Analysis-2class",
+      "date": "2026"
+    },
     {
       "title": "My Portfolio Website",
       "description": "Personal portfolio built with Vue 3",
