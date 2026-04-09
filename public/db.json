@@ -365,7 +365,9 @@
         "/img_project/monoshop/detailproduct.png",
         "/img_project/monoshop/detailorder.png",
         "/img_project/monoshop/listOrder.png",
-        "/img_project/monoshop/adminorder.png"
+        "/img_project/monoshop/adminorder.png",
+        "/img_project/monoshop/customer.gif",
+        "/img_project/monoshop/admin.gif"
       ],
       "demo": "https://monoshopweb.vercel.app/",
       "github": "https://github.com/PattriraTnsg/MonoShopWeb",
